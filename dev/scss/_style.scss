@@ -1,0 +1,86 @@
+.header-wrapper {
+    .header-contact{
+        background-color: $brand-primary;
+        color:$white;
+        .row {
+            padding:.5rem 0;
+            a{
+                color:$white;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+            .iconos-contact a{
+                padding-left:1rem;
+            }
+        }
+        @include media-breakpoint-up(md) { 
+            font-size: 1.2rem;
+            .row{
+                height:60px;
+            }
+        }
+        
+    }
+    .navbar{
+        background-color: rgba($white,.3);
+        position:absolute;
+        z-index:1000;
+        left:0;
+        right:0;
+        width:100%;
+        
+        .navbar-brand img{
+            height:40px;
+        }
+        .nav-link{
+            padding:$nav-link-padding;
+        }
+        .active{
+            .nav-link{
+                background-color: $brand-primary;
+                color:$white;
+                border-radius:$border-radius;
+            }
+        }
+        @include media-breakpoint-up(md) { 
+            .navbar-brand img{
+                height:70px;
+            }
+        }
+    }
+    .carousel{
+        .carousel-item{
+            background-size: cover;
+            background-position: middle;
+            
+            h1,h2,h3,h4,p{
+                color:$white;
+                text-shadow: 4px 4px 6px rgba(150, 150, 150, 1);
+            }
+            .display-4{
+                font-size:2em;
+
+            }
+            
+            @include media-breakpoint-up(lg) { 
+                .display-4{
+                    font-size:$display4-size;
+                }
+            }
+        }
+        @include media-breakpoint-up(lg) { 
+            .carousel-item{
+                height:520px;
+            }
+                
+        }
+
+    }
+}
+
+
+
+.columna{
+    background:$red;
+}

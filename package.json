@@ -1,0 +1,28 @@
+{
+  "name": "creece",
+  "version": "1.0.0",
+  "description": "pagina web para cree ce mas",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "#"
+  },
+  "keywords": [
+    "bootstrap",
+    "one-page"
+  ],
+  "author": "david chay",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp-util": "^3.0.8"
+  }
+}
