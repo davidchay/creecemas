@@ -1,3 +1,13 @@
+.box-red{
+  background-color: red;
+}
+.box-blue{
+  background-color: blue;
+}
+.box-yellow{
+  background-color: yellow;
+}
+
 .header-wrapper {
     .header-contact{
         background-color: $brand-primary;
@@ -14,13 +24,13 @@
                 padding-left:1rem;
             }
         }
-        @include media-breakpoint-up(md) { 
+        @include media-breakpoint-up(md) {
             font-size: 1.2rem;
             .row{
                 height:60px;
             }
         }
-        
+
     }
     .navbar{
         background-color: rgba($white,.3);
@@ -29,7 +39,7 @@
         left:0;
         right:0;
         width:100%;
-        
+
         .navbar-brand img{
             height:40px;
         }
@@ -43,7 +53,7 @@
                 border-radius:$border-radius;
             }
         }
-        @include media-breakpoint-up(md) { 
+        @include media-breakpoint-up(md) {
             .navbar-brand img{
                 height:70px;
             }
@@ -51,36 +61,74 @@
     }
     .carousel{
         .carousel-item{
+            .carousel-caption{
+              display: block;
+              visibility: visible;
+            }
             background-size: cover;
             background-position: middle;
-            
-            h1,h2,h3,h4,p{
+            height:270px;
+            .container{
+              height: 200px;
+              h1,h2,h3,h4,p{
                 color:$white;
                 text-shadow: 4px 4px 6px rgba(150, 150, 150, 1);
+              }
+              .display-4{
+                font-size:1.2em;
+              }
+              p{
+                font-size: .8em;
+              }
             }
-            .display-4{
-                font-size:2em;
-
-            }
-            
-            @include media-breakpoint-up(lg) { 
-                .display-4{
-                    font-size:$display4-size;
-                }
-            }
-        }
-        @include media-breakpoint-up(lg) { 
+        } // size base
+        @include media-breakpoint-up(md) {
             .carousel-item{
-                height:520px;
+                height:400px;
+                .container{
+                  height:270px;
+                  .display-4{
+                      font-size:$font-size-h4;
+                  }
+                  p{
+                    font-size:$font-size-base;
+                  }
+                }
+           }
+        }//media md
+        @include media-breakpoint-up(lg){
+          .carousel-item{
+            height:520px;
+            .container{
+              height: 370px;
+              .display-4{
+                  font-size:$font-size-h1;
+              }
             }
-                
-        }
+          }
+        } //lg
+        @media (min-width: 1200px) {
+          .carousel-item{
+            height:560px;
+            .container{
+              height: 450px;
+              .display-4{
+                  font-size:$display4-size;
+              }
+              p{
+                font-size:1.2rem;
+              }
+            }
+          }
+        } //1200
 
     }
 }
 
 
+.section{
+  padding:3.5em 0;
+  .section-heading{
 
-.columna{
-    background:$red;
+  }
 }
