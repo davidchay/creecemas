@@ -57,7 +57,7 @@ $(document).ready(function(){
   map.addMarker({
     lat: 14.915300,
     lng: -92.251479,
-    title: 'Marker with InfoWindow',
+    title: 'Cree Ce Más, S.A. de C.V.',
     infoWindow: {
       content: contentMap
     }

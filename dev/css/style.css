@@ -4185,7 +4185,7 @@ tbody.collapse.show {
 }
 
 .navbar-inverse .navbar-nav .nav-link:focus, .navbar-inverse .navbar-nav .nav-link:hover {
-  color: #F0BF3C;
+  color: #fff;
 }
 
 .navbar-inverse .navbar-nav .nav-link.disabled {
@@ -8922,6 +8922,26 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   background-color: yellow;
 }
 
+body::-moz-selection,
+h1::-moz-selection, h2::-moz-selection, h3::-moz-selection,
+h4::-moz-selection, h5::-moz-selection, h6::-moz-selection,
+span::-moz-selection, p::-moz-selection, strong::-moz-selection,
+a::-moz-selection, small::-moz-selection, li::-moz-selection, i::-moz-selection,
+label::-moz-selection, img::-moz-selection {
+  background: #F0BF3C;
+  color: #fff;
+}
+
+body::selection,
+h1::selection, h2::selection, h3::selection,
+h4::selection, h5::selection, h6::selection,
+span::selection, p::selection, strong::selection,
+a::selection, small::selection, li::selection, i::selection,
+label::selection, img::selection {
+  background: #F0BF3C;
+  color: #fff;
+}
+
 .header-wrapper .header-contact {
   background-color: #2526CC;
   color: #fff;
@@ -8967,6 +8987,12 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 
 .header-wrapper .navbar .nav-link {
   padding: 0.5em 1em;
+  margin-left: .1rem;
+}
+
+.header-wrapper .navbar .nav-link:hover {
+  background-color: #2526CC;
+  border-radius: 0.25rem;
 }
 
 .header-wrapper .navbar .active .nav-link {
@@ -9295,4 +9321,21 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   color: #fff;
   text-decoration: none;
   margin-top: 1rem;
+}
+
+#section-footer ul, #section-footer li {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+#section-footer li a {
+  color: #636c72;
+}
+
+#section-footer h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 1rem;
 }
