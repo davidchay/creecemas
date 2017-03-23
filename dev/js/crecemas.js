@@ -1,37 +1,28 @@
 (function( $ ) {
-    //Function to animate slider captions 
-    function doAnimations( elems ) {
-        //Cache the animationend event in a variable
-        var animEndEv = 'webkitAnimationEnd animationend';
-        
-        elems.each(function () {
-            var $this = $(this),
-                $animationType = $this.data('animation');
-            $this.addClass($animationType).one(animEndEv, function () {
-                $this.removeClass($animationType);
-            });
-        });
-    }
+    $('#main-slider.carousel').carousel({
+            interval: 8000
+    });
+
+    // Initialize a new plugin instance for all
+    // e.g. $('input[type="range"]') elements.
+   
+
+    // Destroy all plugin instances created from the
+    // e.g. $('input[type="range"]') elements.
+   
+    // Update all rangeslider instances for all
+    // e.g. $('input[type="range"]') elements.
+    // Usefull if you changed some attributes e.g. `min` or `max` etc.
+   
+
+
+    //Text rotate
     
-    //Variables on page load 
-    var $myCarousel = $('#carouselExampleIndicators'),
-    $firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
-        
-    //Initialize carousel 
-    $myCarousel.carousel();
-    
-    //Animate captions in first slide on page load 
-    doAnimations($firstAnimatingElems);
-    
-    //Pause carousel  
-    //$myCarousel.carousel('pause');
-    
-    
-    //Other slides to be animated on carousel slide event 
-    $myCarousel.on('slide.bs.carousel', function (e) {
-        var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
-        doAnimations($animatingElems);
-    });  
+    $(".text-rotate").Morphext({
+        animation: "fadeIn", // Overrides default "bounceIn"
+        separator: ",", // Overrides default ","
+        speed: 3000, // Overrides default 2000
+    });
     
 })(jQuery);
 
@@ -64,6 +55,25 @@ $(document).ready(function(){
   });
 });
   
+//ID KEY
+//AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY
+//AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY
 
-//AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY
-//AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY
+
+
+
+ //custom slider javascript
+$(function() {
+  var output = document.querySelectorAll('output')[0];
+
+  $(document).on('input', 'input[type="range"]', function(e) {
+    output.innerHTML = e.currentTarget.value;
+  });
+
+  $('input[type=range]').rangeslider({
+    polyfill: false
+  });
+
+
+  
+});
