@@ -9001,6 +9001,20 @@ label::selection, img::selection {
   border-radius: 0.25rem;
 }
 
+.header-wrapper .navbar.navbar-shrink {
+  background-color: #fff;
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  -webkit-animation: fadeInDown 1s;
+          animation: fadeInDown 1s;
+}
+
+.header-wrapper .navbar.shink-out {
+  -webkit-animation: fadeOutUp 1s;
+          animation: fadeOutUp 1s;
+}
+
 @media (min-width: 768px) {
   .header-wrapper .navbar .navbar-brand img {
     height: 70px;
