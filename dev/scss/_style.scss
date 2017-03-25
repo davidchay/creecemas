@@ -59,28 +59,35 @@ label::selection,img::selection{
               border-radius:$border-radius;
             }
         }
-        .active{
-            .nav-link{
-                background-color: $brand-primary;
-                color:$white;
-                border-radius:$border-radius;
-            }
+        
+        .nav-link{
+          &.active{
+            background-color: $brand-primary;
+            color:$white;
+            border-radius:$border-radius;
+          }
         }
+        
         &.navbar-shrink{
-          background-color: $white;
-          box-shadow: 0 7px 10px rgba($black,0.3);
+         // background-color: rgba($white,.9);
+          box-shadow: 0 3px 5px rgba($black,0.3);
           position: fixed;
           top:0;
-          animation:fadeInDown 1s;
-        }
-        &.shink-out{
-          animation:fadeOutUp 1s;
+          animation:fadeInDown .5s;
+         
         }
 
         @include media-breakpoint-up(md) {
             .navbar-brand img{
                 height:70px;
             }
+            &.navbar-shrink{
+            .navbar-brand img{
+                height:40px;
+              }
+            } 
+          
+        
         }
     }
     //MAIN SLIDER CAROUSEL
@@ -212,6 +219,11 @@ label::selection,img::selection{
     }
 }
 
+.section{
+  .container{
+    padding:2rem 0;
+  }
+}
 
 
 

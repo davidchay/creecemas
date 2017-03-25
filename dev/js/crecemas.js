@@ -1,20 +1,29 @@
 (function( $ ) {
+    "use strict"; // Start of use strict
     $('#main-slider.carousel').carousel({
             interval: 8000
     });
 
-    // Initialize a new plugin instance for all
-    // e.g. $('input[type="range"]') elements.
-   
+    
+  
 
-    // Destroy all plugin instances created from the
-    // e.g. $('input[type="range"]') elements.
-   
-    // Update all rangeslider instances for all
-    // e.g. $('input[type="range"]') elements.
-    // Usefull if you changed some attributes e.g. `min` or `max` etc.
-   
 
+    $('a.page-scroll').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+    });
+
+$('[data-spy="scroll"]').each(function () {
+  var $spy = $(this).scrollspy('refresh')
+})
 
     //Text rotate
     
@@ -77,3 +86,9 @@ $(function() {
 
   
 });
+
+
+
+
+
+

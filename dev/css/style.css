@@ -8995,29 +8995,26 @@ label::selection, img::selection {
   border-radius: 0.25rem;
 }
 
-.header-wrapper .navbar .active .nav-link {
+.header-wrapper .navbar .nav-link.active {
   background-color: #2526CC;
   color: #fff;
   border-radius: 0.25rem;
 }
 
 .header-wrapper .navbar.navbar-shrink {
-  background-color: #fff;
-  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
-  -webkit-animation: fadeInDown 1s;
-          animation: fadeInDown 1s;
-}
-
-.header-wrapper .navbar.shink-out {
-  -webkit-animation: fadeOutUp 1s;
-          animation: fadeOutUp 1s;
+  -webkit-animation: fadeInDown .5s;
+          animation: fadeInDown .5s;
 }
 
 @media (min-width: 768px) {
   .header-wrapper .navbar .navbar-brand img {
     height: 70px;
+  }
+  .header-wrapper .navbar.navbar-shrink .navbar-brand img {
+    height: 40px;
   }
 }
 
@@ -9135,6 +9132,10 @@ label::selection, img::selection {
   .header-wrapper .carousel .carousel-item .container p {
     font-size: 1.2rem;
   }
+}
+
+.section .container {
+  padding: 2rem 0;
 }
 
 .timeline {
