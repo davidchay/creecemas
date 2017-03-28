@@ -485,3 +485,26 @@ label::selection,img::selection{
     margin-bottom: 1rem;
   }
 }
+
+
+.page{
+  .header-wrapper{
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .overlay{
+      background: rgba($brand-primary,0.6);
+      height:550px;
+      .navbar{
+        background-color: $white;
+        position: static;
+      }
+      .site-heading{
+        padding-top:150px;
+        text-align: center;
+        display: block;
+        color:$white;
+      }
+    }
+  }
+}

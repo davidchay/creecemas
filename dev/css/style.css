@@ -9400,3 +9400,26 @@ label::selection, img::selection {
   font-family: "Montserrat", sans-serif;
   margin-bottom: 1rem;
 }
+
+.page .header-wrapper {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page .header-wrapper .overlay {
+  background: rgba(37, 38, 204, 0.6);
+  height: 550px;
+}
+
+.page .header-wrapper .overlay .navbar {
+  background-color: #fff;
+  position: static;
+}
+
+.page .header-wrapper .overlay .site-heading {
+  padding-top: 150px;
+  text-align: center;
+  display: block;
+  color: #fff;
+}
