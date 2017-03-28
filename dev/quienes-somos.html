@@ -34,7 +34,7 @@
 </head>
 
 <body class="page">
-<header class="header-wrapper" style="background-image:url(img/about-bg.jpg);">
+<header class="header-wrapper parallax" style="background-image:url(img/about-bg.jpg);">
   <div class="overlay">
     <div class="header-contact ">
         <div class="container">
@@ -65,19 +65,19 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="container">
-            <a class="navbar-brand page-scroll" href="#inicio">
+            <a class="navbar-brand" href="/">
                 <img src="img/logo-3.png" alt="Cree Ce Más" >
             </a>
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#inicio">Inicio<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="./">Inicio<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#section-acercade">¿Quiénes somos?</a>
+                        <a class="nav-link active" href="./quienes-somos.html">¿Quiénes somos?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#section-creditos">Crédito</a>
+                        <a class="nav-link" href="#section-creditos">Crédito</a>
                     </li>
                     <!--
                     <li class="nav-item">
@@ -95,20 +95,19 @@
         </div>
     </nav>
     <div class="container">
-      <div class="row"> 
+      <div class="row">
         <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 site-heading align-self-center">
-          <div class="">
+          <div class="site-heading">
             <h1 class="display-3">¿Quiénes somos?</h1>
-
           </div>
         </div>
       </div>
     </div>
-    
+
   </div>
 </header>
 <main>
-  <div id="wrapper" class="section pt-5 pb-5">
+  <div id="wrapper" class="pt-5 pb-5">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
@@ -122,73 +121,114 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="display-4">Breve reseña historica</h2>
-        </div>
-        <div class="col-12 col-md-10 offset-md-1">
-          <div class="p-5">
-            <p class="text-muted">
-              El 02 de Febrero del 2011, un grupo de hombres con vision empresarial, todos destacados inversionistas de la región soconusco, decidieron crear una empresa regional que pusiera a la disposición de micros, pequeños y medianas empresas prestamos en efectivo para el desarrollo de las mismas. es asi como surge cree ce más s.a de c.v. con la convicción de impulsar el crecimiento de empresas y particulares vinculados a negocios, sustentado bajo los valores de unidad, credibilidad, honestidad, honradez y  puntualidad. Mismos valores que ejemplifican en la práctica cada uno de los miembros que integran el honorable consejo de administración.
-            </p>
-          </div>
+
+    </div><!-- ./container -->
+    <div class="vision-mision container-fluid px-0 parallax" style="background-image:url(img/vision-bg.jpg);">
+      <div class="overlay py-5">
+        <div class="row no-gutters p-5">
+            <div class="vision col-12 col-md-6 p-5">
+              <h2 class="display-4">Nuestra <span class="text-secundary">Visión</span> </h2>
+              <p class="lead">
+                Ser reconocida por sus clientes, proveedores y acreedores, como una institución seria, profesional y confiable en el cumplimiento de sus servicios.
+              </p>
+            </div>
         </div>
       </div>
-    </div><!-- ./container -->
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-6 p-5  box-red">
-          <h2 class="h1">Visión</h2>
-          <p>
-            Ser reconocida por sus clientes, proveedores y acreedores, como una institución seria, profesional y confiable en el cumplimiento de sus servicios.
+    </div><!-- ./overlay -->
+
+    <div class="container py-5">
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h2 class="display-4">Nuestros Valores</h2>
+      </div>
+    </div>
+    <div class="row mt-5 text-center">
+        <div class="col-6 col-sm-4 col-md-2 p-3 text-left text-md-center">
+          <p class="text-secundary">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-handshake-o fa-stack-1x fa-inverse" aria-hidden="true"></i>
+            </span>
+            Unidad
+         </p>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 p-3 text-left text-md-center">
+          <p class="text-info">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-check fa-stack-1x fa-inverse" aria-hidden="true"></i>
+            </span>
+            Credibilidad
           </p>
         </div>
-        <div class="col-6 p-5 box-blue">
-          <h2 class="h1">Misión</h2>
-          <p>: Cree Ce Más S.A de C.V, tiene como misión ser una organización eficiente al proporcionar servicios financieros, oportunos y confiables de crédito, para impulsar el crecimiento de las empresas de la región, compromiso que logra al contar con un equipo de trabajo dispuesto y con actitud de servicio; asi mismo, cuenta con la capacidad de cumplir con los compromisos contraídos con sus acreedores, proveedores y prestadores de servicio.</p>
+
+        <div class="col-6 col-sm-4 col-md-2 p-3 text-left text-md-center">
+          <p class="text-danger">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-heart fa-stack-1x fa-inverse" aria-hidden="true"></i>
+            </span>
+            Integridad
+          </p>
+        </div>
+
+        <div class="col-6 col-sm-4 col-md-2 p-3 text-left text-md-center">
+          <p class="text-primary">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-shield fa-stack-1x fa-inverse" aria-hidden="true"></i>
+            </span>
+            Honradez
+          </p>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 p-3 text-left text-md-center">
+          <p class="text-success">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-clock-o fa-stack-1x fa-inverse" aria-hidden="true"></i>
+            </span>
+            Puntualidad
+          </p>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 p-3 text-left text-md-center">
+          <p class="text-muted">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-legal fa-stack-1x fa-inverse" aria-hidden="true"></i>
+            </span>
+            Honestidad
+          </p>
+        </div>
+
+    </div>
+  </div>
+
+    <div class="vision-mision container-fluid px-0 parallax" style="background-image:url(img/mision-bg.jpg);">
+      <div class="overlay py-5">
+        <div class="row no-gutters p-5">
+
+            <div class="col-12 col-md-6 offset-md-6 p-5">
+              <h2 class="display-4">Nuestra <span class="text-secundary">Misión</span></h2>
+              <p class="lead">Ser una organización eficiente al proporcionar servicios financieros, oportunos y confiables de crédito, para impulsar el crecimiento de las empresas de la región, compromiso que logra al contar con un equipo de trabajo dispuesto y con actitud de servicio.</p>
+            </div>
         </div>
       </div>
-      
-    </div>
-    <div class="row text-center">
-      <div class="col-12">
-        <p class="lead"><strong>Te ofrecemos...</strong></p>
-      </div>
-      <div class="col-12 col-sm-6 col-md-3">
-        <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x text-primary"></i>
-          <i class="fa fa-balance-scale fa-stack-1x fa-inverse" aria-hidden="true"></i>
-        </span>
-        <h3 class="h6">Prestamos justos</h3>
-      </div>
-      <div class="col-12 col-sm-6 col-md-3">
-        <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x text-primary"></i>
-          <i class="fa fa-cubes fa-stack-1x fa-inverse" ></i>
-        </span>
-        <h3 class="h6">Pagos comodos</h3>
-      </div>
-      <div class="col-12 col-sm-6 col-md-3">
-        <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x text-primary"></i>
-          <i class="fa fa-usd fa-stack-1x fa-inverse" aria-hidden="true"></i>
-        </span>
-        <h3 class="h6">Te prestamos lo que necesitas</h3>
-      </div>
-      <div class="col-12 col-sm-6 col-md-3">
-        <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x text-primary"></i>
-          <i class="fa fa-percent fa-stack-1x fa-inverse"></i>
-        </span>
-        <h3 class="h6">Tasa de instereses baja</h3>
-      </div>
-    </div><!-- ./row -->
-    <div class="col-12 text-center" style="margin-top:2.5rem;">
-      <a href="#" class="btn btn-secundary btn-lg">conocenos mejor</a>
-    </div>
+    </div><!-- ./overlay -->
   </div><!-- ./container -->
-</div>
-
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="display-4">Breve reseña historica</h2>
+      </div>
+      <div class="col-12 col-md-10 offset-md-1">
+        <div class="p-5">
+          <p class="text-muted">
+            El 02 de Febrero del 2011, un grupo de hombres con vision empresarial, todos destacados inversionistas de la región soconusco, decidieron crear una empresa regional que pusiera a la disposición de micros, pequeños y medianas empresas prestamos en efectivo para el desarrollo de las mismas. es asi como surge cree ce más s.a de c.v. con la convicción de impulsar el crecimiento de empresas y particulares vinculados a negocios, sustentado bajo los valores de unidad, credibilidad, honestidad, honradez y  puntualidad. Mismos valores que ejemplifican en la práctica cada uno de los miembros que integran el honorable consejo de administración.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
 
@@ -201,10 +241,22 @@
     <footer id="section-footer" class="pt-5 bg-faded">
         <div class="container">
           <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-md-4 py-3">
               <img src="img/logo-footer.png" class="d-block img-fluid" alt="">
             </div>
-            <div class="col-4 offset-1">
+            <div class="col-12 push-md-5 col-md-3 py-3">
+              <h4 class="text-center text-md-left">Menu</h4>
+              <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Calculadora</a></li>
+                <li><a href="#">Tramite de crédito</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Aviso de privacidad</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Preguntas frecuentes</a></li>
+              </ul>
+            </div><!-- -->
+            <div class="col-12 pull-md-3 col-md-4 offset-md-1 py-3 text-center text-md-left">
               <h4 class="h6 text-uppercase">Cree Ce Más S.A. de C.V.</h4>
               <ul>
                 <li>23 calle oriente no. 91, colonia Centro.</li>
@@ -212,18 +264,6 @@
                 <li>Tel. (962) 118 05 60</li>
                 <li>Cel. 962 695 61 31</li>
                 <li>crecemas@gmail.com</li>
-              </ul>
-            </div>
-            <div class="col-3">
-            <h4>Menu</h4>
-              <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Calculadora</a></li>
-                <li><a href="#">Tramite de crédito</a></li> 
-                <li><a href="#">Contacto</a></li>
-                <li><a href="#">Aviso de privacidad</a></li>
-                <li><a href="#">Términos y condiciones</a></li>
-                <li><a href="#">Preguntas frecuentes</a></li>
               </ul>
             </div>
           </div>
@@ -235,46 +275,6 @@
     </footer>
 
 
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title"  id="exampleModalLabel">Calculadora de credito</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12 col-md-6 text-center">
-                  <h3 class="h5">¿Cuanto necesitas?</h3>
-                  <p>
-                    <input type="range" />   
-                  </p>
-                  <h3 class="h5">¿Comó lo quieres pagar?</h3>
-                  <p>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                      <button type="button" class="btn btn-primary">Semanal</button>
-                      <button type="button" class="btn btn-primary">Quincenal</button>
-                      <button type="button" class="btn btn-primary">Mensual</button>
-                    </div>  
-                  </p>
-                  <h3 class="h5">¿En cuanto tiempo?</h3>
-                  <p>
-                  in
-                    <input type="range" min="10" max="1000" step="10" value="300"  data-orientation="vertical" />
-                  </p>
-            </div>
-            <div class="col-12 col-md-6 text-center">
-              <a href="#" class="btn btn-secundary ">Tramita tu crédito</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-    </div>
 
     <!-- jQuery Version 3.2.0 -->
     <script src="js/jquery.min.js"></script>
@@ -285,11 +285,11 @@
     <script src="js/rangeslider.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    
+
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY" type="text/javascript"></script>
-    
+
     <script src="http://maps.google.com/maps/api/js?sensor=true&.js"></script>
-    
+
 
     <script src="js/cbpAnimatedHeader.js"></script>
     <script src="js/gmaps.js"></script>

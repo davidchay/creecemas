@@ -8766,6 +8766,14 @@ a.text-primary:focus, a.text-primary:hover {
   color: #1d1ea1 !important;
 }
 
+.text-secundary {
+  color: #F0BF3C !important;
+}
+
+a.text-secundary:focus, a.text-secundary:hover {
+  color: #e7ad12 !important;
+}
+
 .text-success {
   color: #5cb85c !important;
 }
@@ -9401,25 +9409,39 @@ label::selection, img::selection {
   margin-bottom: 1rem;
 }
 
+.page .parallax {
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page .overlay {
+  background-color: rgba(37, 38, 204, 0.6);
+  color: #fff;
+}
+
 .page .header-wrapper {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.page .header-wrapper .overlay {
-  background: rgba(37, 38, 204, 0.6);
-  height: 550px;
-}
-
-.page .header-wrapper .overlay .navbar {
+.page .header-wrapper .navbar {
   background-color: #fff;
   position: static;
 }
 
-.page .header-wrapper .overlay .site-heading {
-  padding-top: 150px;
+.page .header-wrapper .site-heading {
+  padding-top: 80px;
   text-align: center;
   display: block;
-  color: #fff;
+  height: 400px;
+}
+
+.page .vision-mision {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

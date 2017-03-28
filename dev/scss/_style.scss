@@ -53,13 +53,13 @@ label::selection,img::selection{
         }
         .nav-link{
             padding:$nav-link-padding;
-            margin-left:.1rem; 
+            margin-left:.1rem;
             &:hover{
               background-color: $brand-primary;
               border-radius:$border-radius;
             }
         }
-        
+
         .nav-link{
           &.active{
             background-color: $brand-primary;
@@ -67,14 +67,14 @@ label::selection,img::selection{
             border-radius:$border-radius;
           }
         }
-        
+
         &.navbar-shrink{
          // background-color: rgba($white,.9);
           box-shadow: 0 3px 5px rgba($black,0.3);
           position: fixed;
           top:0;
           animation:fadeInDown .5s;
-         
+
         }
 
         @include media-breakpoint-up(md) {
@@ -85,9 +85,9 @@ label::selection,img::selection{
             .navbar-brand img{
                 height:40px;
               }
-            } 
-          
-        
+            }
+
+
         }
     }
     //MAIN SLIDER CAROUSEL
@@ -488,23 +488,38 @@ label::selection,img::selection{
 
 
 .page{
+  .parallax { 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .overlay{
+    background-color: rgba($brand-primary,0.6);
+    color:$white;
+
+  }//overlay
   .header-wrapper{
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
-    .overlay{
-      background: rgba($brand-primary,0.6);
-      height:550px;
-      .navbar{
-        background-color: $white;
-        position: static;
-      }
-      .site-heading{
-        padding-top:150px;
-        text-align: center;
-        display: block;
-        color:$white;
-      }
-    }
+    .navbar{
+      background-color: $white;
+      position: static;
+    }//navbar
+    .site-heading{
+      padding-top:80px;
+      text-align: center;
+      display: block;
+      height:400px;
+    }//site-heading
+  }//header-wrapper
+  .vision-mision{
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-}
+
+
+}//page
