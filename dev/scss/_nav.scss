@@ -110,6 +110,9 @@
 // Hide tabbable panes to start, show them when `.active`
 
 .tab-content {
+  background-color: $gray-lighter;
+  border:1px solid #ddd;
+  border-top: none;
   > .tab-pane {
     display: none;
   }

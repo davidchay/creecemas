@@ -278,11 +278,15 @@ $display1-size: 6rem !default;
 $display2-size: 5.5rem !default;
 $display3-size: 4.5rem !default;
 $display4-size: 3.5rem !default;
+$display5-size: 2.5rem !default;
+$display6-size: 2rem !default;
 
 $display1-weight:     300 !default;
 $display2-weight:     300 !default;
 $display3-weight:     300 !default;
 $display4-weight:     300 !default;
+$display6-weight:     300 !default;
+$display5-weight:     300 !default;
 $display-line-height: $headings-line-height !default;
 
 $lead-font-size:   1.25rem !default;
@@ -644,7 +648,7 @@ $nav-tabs-border-width:                       $border-width !default;
 $nav-tabs-border-radius:                      $border-radius !default;
 $nav-tabs-link-hover-border-color:            $gray-lighter !default;
 $nav-tabs-active-link-hover-color:            $gray !default;
-$nav-tabs-active-link-hover-bg:               $body-bg !default;
+$nav-tabs-active-link-hover-bg:               $gray-lighter !default;
 $nav-tabs-active-link-hover-border-color:     #ddd !default;
 $nav-tabs-justified-link-border-color:        #ddd !default;
 $nav-tabs-justified-active-link-border-color: $body-bg !default;

@@ -586,6 +586,18 @@ h6, .h6 {
   line-height: 1.1;
 }
 
+.display-5 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.display-6 {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
 hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -3727,8 +3739,8 @@ tbody.collapse.show {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #464a4c;
-  background-color: #fff;
-  border-color: #ddd #ddd #fff;
+  background-color: #eceeef;
+  border-color: #ddd #ddd #eceeef;
 }
 
 .nav-tabs .dropdown-menu {
@@ -3760,6 +3772,12 @@ tbody.collapse.show {
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
   text-align: center;
+}
+
+.tab-content {
+  background-color: #eceeef;
+  border: 1px solid #ddd;
+  border-top: none;
 }
 
 .tab-content > .tab-pane {
