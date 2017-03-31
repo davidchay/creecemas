@@ -9427,6 +9427,12 @@ label::selection, img::selection {
   margin-bottom: 1rem;
 }
 
+.page .section-image {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .page .parallax {
   /* Create the parallax scrolling effect */
   background-attachment: fixed;

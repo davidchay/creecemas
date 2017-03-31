@@ -468,6 +468,7 @@ label::selection,img::selection{
 }
 
 #section-footer{
+
   ul,li{
     list-style: none;
     padding: 0;
@@ -488,7 +489,12 @@ label::selection,img::selection{
 
 
 .page{
-  .parallax { 
+  .section-image{
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .parallax {
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
