@@ -4,8 +4,8 @@
             interval: 8000
     });
 
-    
-  
+
+
 
 
     $('a.page-scroll').click(function() {
@@ -26,13 +26,23 @@ $('[data-spy="scroll"]').each(function () {
 })
 
     //Text rotate
-    
+
     $(".text-rotate").Morphext({
         animation: "fadeIn", // Overrides default "bounceIn"
         separator: ",", // Overrides default ","
         speed: 3000, // Overrides default 2000
     });
-    
+
+    $('#mapa').hover(
+      //$(this).toggleClass('mapa-contacto');
+      function () {
+        $(this).find('.mapa-contacto').fadeOut('slow');
+      },
+      function () {
+        $(this).find('.mapa-contacto').fadeIn('slow');
+      }
+    );
+
 })(jQuery);
 
 
@@ -46,14 +56,14 @@ contentMap+="<p>TEL: (962) 1180560; CEL: 962 695 6131</p>";
 $(document).ready(function(){
   //prettyPrint();
   map = new GMaps({
-    div: '#map',
+    div: 'map',
     lat: 14.915300,
     lng: -92.251479,
     scrollwheel: false,
     scroll:{x:$(window).scrollLeft(),y:$(window).scrollTop()},
     zoom: 16,
   });
- 
+
   map.addMarker({
     lat: 14.915300,
     lng: -92.251479,
@@ -63,7 +73,7 @@ $(document).ready(function(){
     }
   });
 });
-  
+
 //ID KEY
 //AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY
 //AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY
@@ -84,11 +94,5 @@ $(function() {
   });
 
 
-  
+
 });
-
-
-
-
-
-

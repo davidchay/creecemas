@@ -527,5 +527,18 @@ label::selection,img::selection{
     background-size: cover;
   }
 
+  .mapa-contacto{
+    background-image:url(../img/contacto-bg-1.png);
+    background-position:bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:420px;
+    position: absolute;
+    z-index:10000;
+    bottom:0;
+    top:0;
+    width:100%;
+  }
+
 
 }//page
