@@ -83,16 +83,45 @@ $(document).ready(function(){
 
  //custom slider javascript
 $(function() {
-  var output = document.querySelectorAll('output')[0];
+  var tiempo= $('#tiempo');
+  tiempo.slider({
+    min:4,
+    max:48,
+    step:4
+  });
+  $('#tiempoValue').text(tiempo.val());
 
-  $(document).on('input', 'input[type="range"]', function(e) {
-    output.innerHTML = e.currentTarget.value;
+
+ tiempo.change(function(){
+   $('#tiempoValue').text($(this).val());
+ });
+
+
+
+  var cantidad= $('#cantidad');
+  cantidad.slider({
+    min:1000000,
+    max:10000000,
+    step:1000000
   });
 
-  $('input[type=range]').rangeslider({
-    polyfill: false
+  $('#cantidadValue').text(cantidad.val());
+  $('#cantidadValue').priceFormat({
+    prefix: '$ ',
+    centsSeparator: '.',
+    thousandsSeparator: ','
   });
 
+ $(cantidad).change(function(){
+   $('#cantidadValue').text($(this).val()).priceFormat({prefix: '$ '});
+ });
 
+ $('#radioTiempo').text($('input[name=tiempo]:checked').val());
+ $('#idRadioTiempo').text($('input[name=tiempo]:checked').attr("data-id"));
+
+ $('input[type=radio][name=tiempo]').change(function() {
+   $('#radioTiempo').text($(this).val());
+   $('#idRadioTiempo').text($(this).attr("data-id"));
+ });
 
 });
