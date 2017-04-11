@@ -1,13 +1,8 @@
 (function( $ ) {
     "use strict"; // Start of use strict
     $('#main-slider.carousel').carousel({
-            interval: 8000
+        interval: 8000
     });
-
-
-
-
-
     $('a.page-scroll').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
@@ -21,33 +16,30 @@
         }
     });
 
-$('[data-spy="scroll"]').each(function () {
-  var $spy = $(this).scrollspy('refresh')
-})
-
-    //Text rotate
-
-    $(".text-rotate").Morphext({
-        animation: "fadeIn", // Overrides default "bounceIn"
-        separator: ",", // Overrides default ","
-        speed: 3000, // Overrides default 2000
+    $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this).scrollspy('refresh');
     });
 
-    $('#mapa').hover(
-      //$(this).toggleClass('mapa-contacto');
-      function () {
-        $(this).find('.mapa-contacto').fadeOut('slow');
-      },
-      function () {
-        $(this).find('.mapa-contacto').fadeIn('slow');
-      }
-    );
+    //Text rotate
+    if($('.text-rotate').length){
+      $(".text-rotate").Morphext({
+          animation: "fadeIn", // Overrides default "bounceIn"
+          separator: ",", // Overrides default ","
+          speed: 3000, // Overrides default 2000
+      });
+    }
+    if($('#mapa').length){
+      $('#mapa').hover(
+        function () {
+          $(this).find('.mapa-contacto').fadeOut('slow');
+        },
+        function () {
+          $(this).find('.mapa-contacto').fadeIn('slow');
+        }
+      );
+    }
 
 })(jQuery);
-
-
-
-
 
 var map;
 var contentMap="<h5>Cree Ce Más, S.A. de C.V.</h5>";
@@ -79,8 +71,6 @@ $(document).ready(function(){
 //AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY
 
 
-
-
  //custom slider javascript
 $(function() {
   var tiempo= $('#tiempo');
@@ -99,22 +89,25 @@ $(function() {
 
 
   var cantidad= $('#cantidad');
-  cantidad.slider({
-    min:1000000,
-    max:10000000,
-    step:1000000
+  /*cantidad.slider({
+    min:10000,
+    max:100000,
+    step:10000
+  });*/
+  $("#cantidad").change(function(){
+    $('#modelCantidad').val($(this).val());
   });
 
-  $('#cantidadValue').text(cantidad.val());
-  $('#cantidadValue').priceFormat({
+  //$('#cantidadValue').text(cantidad.val());
+  /* $('#cantidadValue').priceFormat({
     prefix: '$ ',
-    centsSeparator: '.',
+    //centsSeparator: '.',
     thousandsSeparator: ','
-  });
+  });*/
 
- $(cantidad).change(function(){
-   $('#cantidadValue').text($(this).val()).priceFormat({prefix: '$ '});
- });
+
+
+
 
  $('#radioTiempo').text($('input[name=tiempo]:checked').val());
  $('#idRadioTiempo').text($('input[name=tiempo]:checked').attr("data-id"));

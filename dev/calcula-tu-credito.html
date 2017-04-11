@@ -30,7 +30,7 @@
 
 </head>
 
-<body class="page">
+<body class="page" ng-app="app">
 <header class="header-wrapper" style="background-image:url(img/calcula-tu-credito-bg.jpg);">
   <div class="overlay">
     <div class="header-contact ">
@@ -77,7 +77,10 @@
                         <a class="nav-link" href="./obten-tu-credito.html">Crédito</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="./contacto.html">Contacto</a>
+                        <a class="nav-link active" href="./calcula-tu-credito.html">Calculadora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contacto.html">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -95,54 +98,133 @@
 
   </div>
 </header>
-<main>
+<main ng-controller="calculadoraCtrl">
   <div class="container py-5">
     <div class="row align-items-center">
       <div class="col-12 col-md-6 text-center">
             <h3 class="h2">¿Cuanto necesitas?</h3>
             <p>
-              <input id="cantidad" data-slider-id="cantidadSlider" type="text" />
+              <slider ng-model="cantidad" id="cantidadSlider" min="cantidadOptions.min" step="cantidadOptions.step" max="cantidadOptions.max" value="cantidadOptions.value" ng-change="changeCantidad()"></slider>
               <div class="text-center pt-3">
-                <span id="cantidadValue" class="h3"></span>
+                <span  class="h3">{{ cantidad | currency }}</span>
               </div>
             </p>
             <h3 class="h2 mt-5">¿Comó lo quieres pagar?</h3>
-            <p>
-              <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary">
-                  <input type="radio" name="tiempo" id="semanal" data-id="semanal" autocomplete="off" value="Semanas" > Semanal
-                </label>
-                <label class="btn btn-primary  active">
-                  <input type="radio" name="tiempo" id="quincenal" data-id="quincenal" autocomplete="off" value="Quincenas" checked> Quincenal
-                </label>
-                <label class="btn btn-primary">
-                  <input type="radio" name="tiempo" id="mensual" data-id="mensual" autocomplete="off" value="Meses" > Mensual
-                </label>
-              </div>
-            </p>
+
+            <div class="btn-group">
+                <!--<label class="btn btn-primary" ng-model="periodoPago" uib-btn-radio="'Semanal'" ng-disabled="cantidad>21000">Semanal</label>-->
+                <label class="btn btn-primary" ng-model="periodoPago" uib-btn-radio="'Quincenal'" ng-disabled="cantidad>21000">Quincenal</label>
+                <label class="btn btn-primary" ng-model="periodoPago" uib-btn-radio="'Mensual'" ng-disabled="cantidad<21000">Mensual</label>
+            </div>
+
+
+
             <h3 class="h2 mt-5">¿En cuanto tiempo?</h3>
             <p>
-                <input id="tiempo" data-slider-id="tiempoSlider" type="text" />
+                <slider ng-model="tiempo" id="tiempoSlider" min="tiempoOptions.min" step="tiempoOptions.step" max="tiempoOptions.max" value="tiempoOptions.value" ng-change="changeTiempo()"></slider>
                 <div class="text-center pt-3">
-                  <span id="tiempoValue" class="h3"></span> <span id="radioTiempo" class="h3"></span>
+                  <span class="h3">{{tiempo}}</span>
+                  <span ng-switch on="periodoPago">
+                    <span class="h3" ng-switch-when="Semanal">Semanas</span>
+                    <span class="h3" ng-switch-when="Quincenal">Quincenas</span>
+                    <span class="h3" ng-switch-default>Mensuales</span>
+                  </span>
                 </div>
             </p>
       </div>
       <div class="col-12 col-md-6 text-center">
         <div class="card bg-faded">
           <div class="card-block">
-            <h4 class="card-title py-2 ">Pago <span id="idRadioTiempo"></span> de:</h4>
-            <span class="card-text display-5">$4,000.00</span>
+            <h4 class="card-title py-2 ">Pago <span>{{periodoPago | lowercase}}</span> de:</h4>
+            <span class="card-text display-5">{{ pago | currency}}</span>
             <p class="card-text pt-3">Total a pagar</p>
-            <span class="card-text display-6">$64,000.00</span>
-            <p class="card-text mt-3"><small>CAT 60% (IVA Incluido)</small></p>
+            <span class="card-text display-6">{{pagoTotal|currency}}</span>
+            <p class="card-text mt-3"><small>CAT {{cat}}% (IVA Incluido)</small></p>
             <a href="./obten-tu-credito.html" class="btn btn-primary mt-3">Tramita tu crédito</a>
           </div>
         </div>
       </div>
     </div>
+    <div class="row mt-5">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Cantidad</th>
+            <th>Plazo</th>
+            <th>Tasa Mensual</th>
+            <th>Plazo Maximo</th>
+            <th>Tasa Anual Total (CAT)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$10,000.00 - $20,000.00</td>
+            <td>Semanal / Quincenal</td>
+            <td>5% mas IVA</td>
+            <td>52</td>
+            <td>60%</td>
+          </tr>
+          <tr>
+            <td>$21,000.00 - $100,000.00</td>
+            <td>Mensual</td>
+            <td>4% mas IVA</td>
+            <td>24</td>
+            <td>48%</td>
+          </tr>
+          <tr>
+            <td>$101,000.00 - $500,000.00</td>
+            <td>Mensual</td>
+            <td>3% mas IVA</td>
+            <td>48</td>
+            <td>36%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
+
 </main>
+<section class="section-image" style="background-image:url(./img/credit-fotter-bg.jpg)">
+  <div class="overlay py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="display-5 mb-5">Para más información.</h2>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-map-marker fa-stack-1x fa-inverse" aria-hidden="true"></i>
+          </span>
+          <h3 class="h5">Visítanos</h3>
+          <p>23 calle oriente no. 91, colonia Centro.
+Tapachula, Chiapas.</p>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-phone fa-stack-1x fa-inverse" aria-hidden="true"></i>
+          </span>
+          <h3 class="h5">Llámanos</h3>
+          <p>Tel. (962) 118 05 60.<br/>
+Cel. 962 695 61 31.</p>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-envelope-o fa-stack-1x fa-inverse" aria-hidden="true"></i>
+          </span>
+          <h3 class="h5">Escríbenos</h3>
+          <p>mail@email.com</p>
+        </div>
+        <div class="col-12 text-center">
+          <h2 class="display-6 mt-5">Será un placer ayudarle.</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       <!-- Footer -->
     <footer id="section-footer" class="pt-5 bg-faded">
         <div class="container">
@@ -181,7 +263,7 @@
 
 
 
-    <!-- jQuery Version 3.2.0 -->
+  <!-- jQuery Version 3.2.0 -->
     <script src="js/jquery.min.js"></script>
 
     <!-- Tether -->
@@ -190,15 +272,89 @@
     <script src="js/bootstrap-slider.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
-
-
     <script src="js/jquery.priceformat.min.js"></script>
 
-
-    <script src="js/morphext.js"></script>
-
     <script src="js/crecemas.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/buttons-ui.js"></script>
+    <script>
+    angular.module('app', ['ui.bootstrap-slider','ui.bootstrap.buttons'])
+.controller('calculadoraCtrl', ['$scope', '$log', function ($scope, $log) {
+    $scope.cantidad=35000;
+    $scope.tiempo=16;
+    $scope.periodoPago="Mensual";
+    $scope.pago=3755.50;
+    $scope.pagoTotal=60088;
+    $scope.cat=48;
+    $scope.cantidadOptions = {
+        min: 5000,
+        max: 100000,
+        step: 5000,
+        orientation: 'horizontal',  // vertical
+        handle: 'round', //'square', 'triangle' or 'custom'
+        tooltip: 'show', //'hide','always'
+        tooltipseparator: ':',
+        tooltipsplit: false,
+        enabled: true,
+        naturalarrowkeys: false,
+        range: false,
+        ngDisabled: false,
+        reversed: false
+    };
+    $scope.tiempoOptions = {
+        min: 1,
+        max: 24,
+        step: 1,
+        orientation: 'horizontal',  // vertical
+        handle: 'round', //'square', 'triangle' or 'custom'
+        tooltip: 'show', //'hide','always'
+        tooltipseparator: ':',
+        tooltipsplit: false,
+        enabled: true,
+        naturalarrowkeys: false,
+        range: false,
+        ngDisabled: false,
+        reversed: false
+    };
+    $scope.changeCantidad=function(){
+      console.log($scope.cantidad);
+      if($scope.cantidad<21000){
+          $scope.periodoPago='Quincenal';
+          $scope.cantidadOptions.step=2000;
+      }else if($scope.cantidad>20000){
+          $scope.periodoPago='Mensual';
+          $scope.cantidadOptions.step=5000;
+      }
+      $scope.calculaPago($scope.cantidad,$scope.tiempo,$scope.periodoPago);
+    }
+    $scope.changeTiempo=function(){
+      if($scope.periodoPago!="Mensual"){
+        $scope.tiempoOptions.max=52;
+      }else{
+        console.log($scope.peridoPago);
+        $scope.tiempoOptions.max=24;
+      }
+      $scope.calculaPago($scope.cantidad,$scope.tiempo,$scope.periodoPago);
+    }
+    $scope.calculaPago=function(cantidad,tiempo,periodoPago){
+      $scope.iva=0.16;
+      if(periodoPago!='Mensual'){
+        $scope.cat=60;
+      }else{
+        $scope.cat=48;
+      }
+      $scope.interes=(cantidad*$scope.cat)/100;
+      $scope.interesTotal=(cantidad+$scope.interes)*$scope.iva;
+      $scope.pagoTotal=cantidad+$scope.interes+$scope.interesTotal;
+      $scope.pago=$scope.pagoTotal/tiempo;
+    }
+
+
+}]
+);
+
+    </script>
 </body>
 
 </html>
