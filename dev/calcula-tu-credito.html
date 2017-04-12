@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="css/bootstrap-slider.css">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/morphext.css">
-
+    
     <!-- Temporary fix for navbar responsiveness -->
     <style>
     .navbar-toggler {
@@ -63,7 +61,7 @@
         </button>
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="img/logo-3.png" alt="Cree Ce Más" >
+                <img src="img/logo.png" alt="Cree Ce Más" >
             </a>
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
@@ -112,8 +110,7 @@
             <h3 class="h2 mt-5">¿Comó lo quieres pagar?</h3>
 
             <div class="btn-group">
-                <!--<label class="btn btn-primary" ng-model="periodoPago" uib-btn-radio="'Semanal'" ng-disabled="cantidad>21000">Semanal</label>-->
-                <label class="btn btn-primary" ng-model="periodoPago" uib-btn-radio="'Quincenal'" ng-disabled="cantidad>21000">Quincenal</label>
+                <label class="btn btn-primary" ng-model="periodoPago" uib-btn-radio="'Quincenal'" ng-disabled="cantidad>20000"ng-class="{'diabled-class': btn-primary}">Quincenal</label>
                 <label class="btn btn-primary" ng-model="periodoPago" uib-btn-radio="'Mensual'" ng-disabled="cantidad<21000">Mensual</label>
             </div>
 
@@ -132,7 +129,7 @@
                 </div>
             </p>
       </div>
-      <div class="col-12 col-md-6 text-center">
+      <div class="col-12 col-md-4 offset-md-1 text-center">
         <div class="card bg-faded">
           <div class="card-block">
             <h4 class="card-title py-2 ">Pago <span>{{periodoPago | lowercase}}</span> de:</h4>
@@ -140,6 +137,7 @@
             <p class="card-text pt-3">Total a pagar</p>
             <span class="card-text display-6">{{pagoTotal|currency}}</span>
             <p class="card-text mt-3"><small>CAT {{cat}}% (IVA Incluido)</small></p>
+            
             <a href="./obten-tu-credito.html" class="btn btn-primary mt-3">Tramita tu crédito</a>
           </div>
         </div>
@@ -272,9 +270,7 @@ Cel. 962 695 61 31.</p>
     <script src="js/bootstrap-slider.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.priceformat.min.js"></script>
-
-    <script src="js/crecemas.js"></script>
+    <!--<script src="js/crecemas.js"></script>-->
     <script src="js/angular.min.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/buttons-ui.js"></script>
@@ -290,7 +286,7 @@ Cel. 962 695 61 31.</p>
     $scope.cantidadOptions = {
         min: 5000,
         max: 100000,
-        step: 5000,
+        step: 1000,
         orientation: 'horizontal',  // vertical
         handle: 'round', //'square', 'triangle' or 'custom'
         tooltip: 'show', //'hide','always'
@@ -318,7 +314,6 @@ Cel. 962 695 61 31.</p>
         reversed: false
     };
     $scope.changeCantidad=function(){
-      console.log($scope.cantidad);
       if($scope.cantidad<21000){
           $scope.periodoPago='Quincenal';
           $scope.cantidadOptions.step=2000;
@@ -329,24 +324,30 @@ Cel. 962 695 61 31.</p>
       $scope.calculaPago($scope.cantidad,$scope.tiempo,$scope.periodoPago);
     }
     $scope.changeTiempo=function(){
-      if($scope.periodoPago!="Mensual"){
-        $scope.tiempoOptions.max=52;
-      }else{
-        console.log($scope.peridoPago);
-        $scope.tiempoOptions.max=24;
-      }
       $scope.calculaPago($scope.cantidad,$scope.tiempo,$scope.periodoPago);
     }
     $scope.calculaPago=function(cantidad,tiempo,periodoPago){
       $scope.iva=0.16;
-      if(periodoPago!='Mensual'){
-        $scope.cat=60;
-      }else{
+      console.log(periodoPago);
+      if(periodoPago=='Mensual'){
         $scope.cat=48;
+        if(tiempo>12){
+          $scope.caty=68;  
+        }else{
+          $scope.caty=33;  
+        }
+      }else{
+        $scope.cat=60;
+        if(tiempo>12){
+          $scope.caty=42;  
+        }else{
+          $scope.caty=22;  
+        }
       }
-      $scope.interes=(cantidad*$scope.cat)/100;
-      $scope.interesTotal=(cantidad+$scope.interes)*$scope.iva;
-      $scope.pagoTotal=cantidad+$scope.interes+$scope.interesTotal;
+      
+      $scope.interes=(cantidad*$scope.caty)/100;
+      //$scope.interesTotal=(cantidad+$scope.interes)*$scope.iva;
+      $scope.pagoTotal=cantidad+$scope.interes;
       $scope.pago=$scope.pagoTotal/tiempo;
     }
 
