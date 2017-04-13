@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="David Chay @davichay">
     <title>Calcula tu crédito | Cree Ce Más S.A. de C.V.</title>
-
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap-slider.css">
     <link href="css/style.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 </head>
 
 <body class="page" ng-app="app">
-<header class="header-wrapper" style="background-image:url(img/calcula-tu-credito-bg.jpg);">
+<header class="header-wrapper mb-5" style="background-image:url(img/calcula-tu-credito-bg.jpg);">
   <div class="overlay">
     <div class="header-contact ">
         <div class="container">
@@ -97,7 +97,7 @@
   </div>
 </header>
 <main ng-controller="calculadoraCtrl">
-  <div class="container py-5">
+  <div class="container">
     <div class="row align-items-center">
       <div class="col-12 col-md-6 text-center">
             <h3 class="h2">¿Cuanto necesitas?</h3>
@@ -107,16 +107,17 @@
                 <span  class="h3">{{ cantidad | currency }}</span>
               </div>
             </p>
+            <!--
             <h3 class="h2 mt-5">¿Comó lo quieres pagar?</h3>
 
             <div class="btn-group">
                 <label class="btn btn-primary" ng-model="periodoPago" uib-btn-radio="'Quincenal'" ng-disabled="cantidad>20000"ng-class="{'diabled-class': btn-primary}">Quincenal</label>
                 <label class="btn btn-primary" ng-model="periodoPago" uib-btn-radio="'Mensual'" ng-disabled="cantidad<21000">Mensual</label>
             </div>
+-->
 
 
-
-            <h3 class="h2 mt-5">¿En cuanto tiempo?</h3>
+            <h3 class="h2 mt-5">¿Plazo para pagar?</h3>
             <p>
                 <slider ng-model="tiempo" id="tiempoSlider" min="tiempoOptions.min" step="tiempoOptions.step" max="tiempoOptions.max" value="tiempoOptions.value" ng-change="changeTiempo()"></slider>
                 <div class="text-center pt-3">
@@ -143,36 +144,36 @@
         </div>
       </div>
     </div>
-    <div class="row mt-5">
-      <table class="table">
-        <thead>
+    <div class="row my-5">
+      <table class="table table-striped text-center">
+        <thead class="thead-inverse">
           <tr>
-            <th>Cantidad</th>
-            <th>Plazo</th>
-            <th>Tasa Mensual</th>
-            <th>Plazo Maximo</th>
-            <th>Tasa Anual Total (CAT)</th>
+            <th class="text-center">Cantidad</th>
+            <th class="text-center">Plazo</th>
+            <th class="text-center">Tasa Mensual</th>
+            <th class="text-center">Plazo Máximo</th>
+            <th class="text-center">Tasa Anual Total (CAT)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>$10,000.00 - $20,000.00</td>
             <td>Semanal / Quincenal</td>
-            <td>5% mas IVA</td>
+            <td>5% más IVA</td>
             <td>52</td>
             <td>60%</td>
           </tr>
           <tr>
             <td>$21,000.00 - $100,000.00</td>
             <td>Mensual</td>
-            <td>4% mas IVA</td>
+            <td>4% más IVA</td>
             <td>24</td>
             <td>48%</td>
           </tr>
           <tr>
             <td>$101,000.00 - $500,000.00</td>
             <td>Mensual</td>
-            <td>3% mas IVA</td>
+            <td>3% más IVA</td>
             <td>48</td>
             <td>36%</td>
           </tr>
@@ -272,90 +273,10 @@ Cel. 962 695 61 31.</p>
     <script src="js/bootstrap.min.js"></script>
     <!--<script src="js/crecemas.js"></script>-->
     <script src="js/angular.min.js"></script>
-    <script src="js/slider.js"></script>
-    <script src="js/buttons-ui.js"></script>
-    <script>
-    angular.module('app', ['ui.bootstrap-slider','ui.bootstrap.buttons'])
-.controller('calculadoraCtrl', ['$scope', '$log', function ($scope, $log) {
-    $scope.cantidad=35000;
-    $scope.tiempo=16;
-    $scope.periodoPago="Mensual";
-    $scope.pago=3755.50;
-    $scope.pagoTotal=60088;
-    $scope.cat=48;
-    $scope.cantidadOptions = {
-        min: 5000,
-        max: 100000,
-        step: 1000,
-        orientation: 'horizontal',  // vertical
-        handle: 'round', //'square', 'triangle' or 'custom'
-        tooltip: 'show', //'hide','always'
-        tooltipseparator: ':',
-        tooltipsplit: false,
-        enabled: true,
-        naturalarrowkeys: false,
-        range: false,
-        ngDisabled: false,
-        reversed: false
-    };
-    $scope.tiempoOptions = {
-        min: 1,
-        max: 24,
-        step: 1,
-        orientation: 'horizontal',  // vertical
-        handle: 'round', //'square', 'triangle' or 'custom'
-        tooltip: 'show', //'hide','always'
-        tooltipseparator: ':',
-        tooltipsplit: false,
-        enabled: true,
-        naturalarrowkeys: false,
-        range: false,
-        ngDisabled: false,
-        reversed: false
-    };
-    $scope.changeCantidad=function(){
-      if($scope.cantidad<21000){
-          $scope.periodoPago='Quincenal';
-          $scope.cantidadOptions.step=2000;
-      }else if($scope.cantidad>20000){
-          $scope.periodoPago='Mensual';
-          $scope.cantidadOptions.step=5000;
-      }
-      $scope.calculaPago($scope.cantidad,$scope.tiempo,$scope.periodoPago);
-    }
-    $scope.changeTiempo=function(){
-      $scope.calculaPago($scope.cantidad,$scope.tiempo,$scope.periodoPago);
-    }
-    $scope.calculaPago=function(cantidad,tiempo,periodoPago){
-      $scope.iva=0.16;
-      console.log(periodoPago);
-      if(periodoPago=='Mensual'){
-        $scope.cat=48;
-        if(tiempo>12){
-          $scope.caty=68;  
-        }else{
-          $scope.caty=33;  
-        }
-      }else{
-        $scope.cat=60;
-        if(tiempo>12){
-          $scope.caty=42;  
-        }else{
-          $scope.caty=22;  
-        }
-      }
-      
-      $scope.interes=(cantidad*$scope.caty)/100;
-      //$scope.interesTotal=(cantidad+$scope.interes)*$scope.iva;
-      $scope.pagoTotal=cantidad+$scope.interes;
-      $scope.pago=$scope.pagoTotal/tiempo;
-    }
-
-
-}]
-);
-
-    </script>
+    <script src="js/ng-slider.js"></script>
+    <script src="js/ng-buttons-ui.js"></script>
+    <script src="js/calculator.js"></script>
+    
 </body>
 
 </html>
