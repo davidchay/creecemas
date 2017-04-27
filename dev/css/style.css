@@ -8936,18 +8936,6 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   }
 }
 
-.box-red {
-  background-color: red;
-}
-
-.box-blue {
-  background-color: blue;
-}
-
-.box-yellow {
-  background-color: yellow;
-}
-
 body::-moz-selection,
 h1::-moz-selection, h2::-moz-selection, h3::-moz-selection,
 h4::-moz-selection, h5::-moz-selection, h6::-moz-selection,
@@ -9387,7 +9375,6 @@ label::selection, img::selection {
 }
 
 #section-contacto {
-  background: url("../img/bg_contact.jpg") no-repeat center center scroll;
   background-size: cover;
   background-position: middle;
   color: #fff;

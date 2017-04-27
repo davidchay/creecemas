@@ -39,6 +39,27 @@
       );
     }
 
+
+function contactar(){
+  console.log("Ejecuta contactar");
+  console.log(token);
+  $("#form-contact").submit();
+  alert("Se hizo contacto");
+}
+    if($('#form-contact').length){
+
+      $('#form-contact').hover(
+        function () {
+          $(this).find('.mapa-contacto').fadeOut('slow');
+        },
+        function () {
+          $(this).find('.mapa-contacto').fadeIn('slow');
+        }
+      );
+    }
+
+
+
 })(jQuery);
 
 var map;
@@ -69,6 +90,3 @@ $(document).ready(function(){
 //ID KEY
 //AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY
 //AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY
-
-
- 

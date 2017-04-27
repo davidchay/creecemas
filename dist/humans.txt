@@ -1,0 +1,12 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# AUTHOR
+    
+    David Chay - Desarrollador Web - @davichay
+
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5,
+    Apache Server Configs, jQuery, Normalize.css, Bootstrap,handlebars, gulp

@@ -12,10 +12,16 @@ var gulp = require('gulp'),
 var path={
     src:{
         scss:'./dev/scss/**/*.scss',
-        html:'./dev/*.html'
+        html:'./dev/*.html',
+        styles:'./dev/css/*.css',
+        js:'./dev/js/*.js',
+        img:'./dev/img/*'
     },
     dest:{
         css:'./dev/css/',
+        img:'./dist/img/',
+        styles:'./dist/css/',
+        js:'./dist/js/'
     }
 };
 
@@ -46,6 +52,20 @@ gulp.task('connect',function(){
       port: 8000,
       livereload:true
     });
+});
+
+gulp.task('dist',function(){
+        gulp.src(path.src.styles)
+        .pipe(cssmin())
+        .pipe(gulp.dest(path.dest.styles));
+
+        gulp.src(path.src.js)
+        .pipe(uglify())
+        .pipe(gulp.dest(path.dest.js));
+
+        gulp.src(path.src.img)
+        .pipe(imagemin())
+        .pipe(gulp.dest(path.dest.img));
 });
 
 gulp.task('watch',function(){

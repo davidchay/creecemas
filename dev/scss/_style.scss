@@ -1,12 +1,3 @@
-.box-red{
-  background-color: red;
-}
-.box-blue{
-  background-color: blue;
-}
-.box-yellow{
-  background-color: yellow;
-}
 body::selection,
 h1::selection,h2::selection,h3::selection,
 h4::selection,h5::selection,h6::selection,
@@ -444,7 +435,6 @@ label::selection,img::selection{
 //Contacto
 
 #section-contacto{
-  background: url('../img/bg_contact.jpg') no-repeat center center scroll;
   background-size: cover;
   background-position: middle;
   color:$white;
