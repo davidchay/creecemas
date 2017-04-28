@@ -26,7 +26,7 @@
         }
     }
     </style>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 
 <body class="home" data-spy="scroll" data-target=".navbar">
@@ -424,6 +424,10 @@
           <h2 class="header display-4">Contáctanos</h2>
           <h3 class="h4">Será un placer ayudarle</h3>
         </div>
+        <div class="col-12 hidden-sm-down">
+
+          <div class="response"></div>
+        </div>
         <div class="col-12 col-md-4 offset-md-2 pt-2 px-3">
           <h3 class="h5">CREE CE MÁS S.A. DE C.V.</h3>
           <h4 class="h6 pb-3">Fácil y rápido, créditos a tu medida.</h4>
@@ -445,33 +449,41 @@
           <form id="form-contact" action="" class="form">
             <div class="form-group">
               <label for="nombre">Nombre</label>
-              <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="nombre" placeholder="" data-validation-required-message="Campo requerido" required>
+              <input id="nombre" type="text" class="form-control" name="nombre" aria-describedby="nombre" placeholder="" data-validation-required-message="Campo requerido" required>
             </div>
             <div class="form-group">
-              <label for="nombre">Email</label>
+              <label for="email">Email</label>
               <input type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="">
             </div>
             <div class="form-group">
               <label for="tel">Teléfono</label>
-              <input type="tel" class="form-control" id="tel" name="tel" placeholder="">
+              <input type="tel" class="form-control" id="tel" name="tel" placeholder="" required>
             </div>
             <div class="form-group">
               <label for="asunto">Asunto</label>
-              <input type="text" class="form-control" id="asunto" name="asunto" placeholder="">
+              <input type="text" class="form-control" id="asunto" name="asunto" placeholder="" required>
             </div>
             <div class="form-group">
               <label for="mensaje">Mensaje</label>
-              <textarea class="form-control" id="mensaje" name="mensaje" placeholder=""></textarea>
+              <textarea class="form-control" id="mensaje" name="mensaje" placeholder="" required></textarea>
             </div>
-            <button id="contactarSubmit" class="g-recaptcha btn btn-secundary" data-sitekey="6LdUDh8UAAAAAA5tdio78LB72bh6_Q6zL35bLX28" data-callback="contactar" data-size="invisible">
+            <div id="recaptcha" class="g-recaptcha"
+          data-sitekey="6LdUDh8UAAAAAA5tdio78LB72bh6_Q6zL35bLX28"
+          data-callback="onSubmit"
+          data-size="invisible"></div>
+            <button type="submit" class="btn btn-secundary" >
               <i class="fa fa-paper-plane" aria-hidden="true"></i> Contactar
-            </button>
-            <button id="contactar-submit" class="btn btn-secundary" >
-              <i class="fa fa-paper-plane" aria-hidden="true"></i> Contactar2
             </button>
 
           </form>
         </div>
+
+
+
+    <div class="col-12 hidden-md-up ">
+      
+      <div class="response"></div>
+    </div>
       </div><!-- /row -->
     </div><!-- ./container -->
   </div>
@@ -538,13 +550,15 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY" type="text/javascript"></script>
-   
+
     <script src="js/cbpAnimatedHeader.js"></script>
-    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/jquery.validate.js"></script>
     <script src="js/gmaps.js"></script>
     <script src="js/morphext.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/crecemas.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 
 </html>
