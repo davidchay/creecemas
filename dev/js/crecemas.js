@@ -40,27 +40,32 @@
     }
 
 
-function contactar(){
-  console.log("Ejecuta contactar");
-  console.log(token);
-  $("#form-contact").submit();
-  alert("Se hizo contacto");
-}
-    if($('#form-contact').length){
-
-      $('#form-contact').hover(
-        function () {
-          $(this).find('.mapa-contacto').fadeOut('slow');
-        },
-        function () {
-          $(this).find('.mapa-contacto').fadeIn('slow');
-        }
-      );
+    function contactar(){
+      console.log("Ejecuta contactar");
+      console.log(token);
+      $("#form-contact").submit();
+      alert("Se hizo contacto");
     }
+    
+
 
 
 
 })(jQuery);
+
+$( document ).ready(function() {
+    $("#contactarSubmit").on('click', function (event) {
+      console.log('Entra a validatre');
+      event.preventDefault();
+      if (!document.getElementById('nombre').value) {
+        alert("You must add text to the required field");
+      } else {
+        grecaptcha.execute();
+      }
+    });
+});
+
+ $(function () { $("input,select,textarea").not("[type=button]").jqBootstrapValidation(); } );
 
 var map;
 var contentMap="<h5>Cree Ce Más, S.A. de C.V.</h5>";
