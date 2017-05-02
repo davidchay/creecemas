@@ -24,7 +24,6 @@
         }
     }
     </style>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body class="page">
@@ -104,11 +103,14 @@
         <div class="col-12 mb-5 text-center">
           <h2 class="display-4">Escríbenos</h2>
         </div>
+        <div class="col-12 hidden-sm-down">
+          <div class="response"></div>
+        </div>
       </div>
-      <form class="" action="index.html" method="post">
+     <form id="form-contact" action="" class="form">
         <div class="row mb-3">
           <div class="col-12 col-md-8 offset-md-2">
-            <input type="text" class="form-control form-control-lg" id="nombre" name="nombre" aria-describedby="nombre" placeholder="Nombre">
+            <input type="text" class="form-control form-control-lg" id="nombre" name="nombre" aria-describedby="nombre" placeholder="Nombre" required>
           </div>
         </div>
         <div class="row mb-3">
@@ -116,26 +118,37 @@
             <input type="email" class="form-control form-control-lg" id="email" name="email" aria-describedby="email" placeholder="Email">
           </div>
           <div class="col-12 col-md-4">
-            <input type="tel" class="form-control form-control-lg" id="tel" name="tel" placeholder="Teléfono">
+            <input type="tel" class="form-control form-control-lg" id="tel" name="tel" placeholder="Teléfono" required>
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-12 col-md-8 offset-md-2">
-            <input type="text" class="form-control form-control-lg" id="asunto" name="asunto" placeholder="Asunto">
+            <input type="text" class="form-control form-control-lg" id="asunto" name="asunto" placeholder="Asunto" required>
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-12 col-md-8 offset-md-2">
-            <textarea class="form-control form-control-lg" id="mensaje" name="mensaje" placeholder="Mensaje"></textarea>
+            <textarea class="form-control form-control-lg" id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
           </div>
         </div>
+        <div id="recaptcha" class="g-recaptcha"
+          data-sitekey="6LdUDh8UAAAAAA5tdio78LB72bh6_Q6zL35bLX28"
+          data-callback="onSubmit"
+          data-size="invisible"></div>
         <div class="row">
           <div class="col-12 col-md-4 offset-md-4">
-            <button type="submit" class="btn btn-lg btn-block btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar</button>
+            
+            <button type="submit" class="btn btn-lg btn-block btn-primary" >
+              <i class="fa fa-paper-plane" aria-hidden="true"></i> Contactar
+            </button>
           </div>
         </div>
       </form>
-
+      <div class="row">
+        <div class="col-12 hidden-md-up ">
+          <div class="response"></div>
+        </div>
+      </div>
   </div>
 </section>
 <section id="llamanos"class="section-image my-5" style="background-image:url(./img/llamanos.jpg)">
@@ -226,11 +239,13 @@ Tapachula, Chiapas.</p>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY" type="text/javascript"></script>
-
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY" type="text/javascript"></script>
     <script src="js/gmaps.js"></script>
+
+    <script src="js/jquery.validate.js"></script>
     <script src="js/crecemas.js"></script>
-    <script src="js/jqBootstrapValidation.js"></script>
+    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
 

@@ -6,12 +6,10 @@ $telefono=$_GET['tel'];
 $asunto=$_GET['asunto'];
 $mensaje=$_GET['mensaje'];
 
-
 $path='http://creecemas.com';
-$to="davichay@gmail.com";
-$subject="Este es un mensaje de prueba creecemas"
-$body = '
-<!DOCTYPE html>
+$to="operativocmas@hotmail.com";
+$subject= $nombre." a contatactado desde el sitio web creecemas.com";
+$body='<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8"> <!-- utf-8 works for most cases -->
@@ -255,7 +253,7 @@ $body = '
                         <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" width="100%">
                             <tr>
                                 <td style="padding: 40px; padding-bottom:0; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                  Le sugerimos ponerse en contacto con la persona que envio este email, lo mas pronto posible.
+                                  Le sugerimos ponerse en contacto con '.$nombre.', lo mas pronto posible.
                                 </td>
                             </tr>
                             <tr>
@@ -295,7 +293,7 @@ $body = '
 
 //para el envío en formato HTML
 $headers = 'Content-Type: text/html; charset=UTF-8';
-$headers.= 'From:creecemas.com <no-reply@creecemas.com>');
+$headers.= 'From:'.$nombre.'<'.$email.'>';
 
 mail($to,$subject,$body,$headers)
 

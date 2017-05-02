@@ -44,8 +44,7 @@
 
 
 var onSubmit = function(token) {
-    var url = "contacto.php";
-    var datos=$("#form-contact").serialize();
+    var datos=$("#form-contact").serializeArray();
     var nombre=$("#nombre").val();
     var html='<div class="alert alert-success alert-dismissible fade show" role="alert">';
     html+='<button type="button" class="close" data-dismiss="alert" aria-label="Close">';
@@ -64,14 +63,14 @@ var onSubmit = function(token) {
           success: function(data)
           {
             $('.response').html(html).fadeIn('slow');
-            console.log(data);
+            $("#form-contact")[0].reset();
           },
           error:function(){
             $('.response').html(error).fadeIn('slow');
           }
 
     });
-    
+
  };
 
  $('#form-contact').validate({
