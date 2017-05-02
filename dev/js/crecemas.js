@@ -44,7 +44,8 @@
 
 
 var onSubmit = function(token) {
-    var url = "./contacto.php";
+    var url = "contacto.php";
+    var datos=$("#form-contact").serialize();
     var nombre=$("#nombre").val();
     var html='<div class="alert alert-success alert-dismissible fade show" role="alert">';
     html+='<button type="button" class="close" data-dismiss="alert" aria-label="Close">';
@@ -56,18 +57,21 @@ var onSubmit = function(token) {
     error+='<span aria-hidden="true">&times;</span></button>';
     error+='<h5><i class="fa fa-frown-o" aria-hidden="true"></i> Ha ocurrido un problema. </h5> <span style="text-transform:capitalize;">'+nombre+'</span>. Nos apena decirte que tu mensaje no pudo ser enviado, por favor comunicate con nosotros por teléfono o por otro medio. Gracias por tu comprensión.</div>';
     $.ajax({
-          type: "POST",
-          url: url,
-          data: $("#form-contact").serialize(), // Adjuntar los campos del formulario enviado.
+          type: "GET",
+          url: "contacto.php",
+          data: datos, // Adjuntar los campos del formulario enviado.
+          dataType : "html",
           success: function(data)
           {
             $('.response').html(html).fadeIn('slow');
+            console.log(data);
           },
           error:function(){
             $('.response').html(error).fadeIn('slow');
           }
 
     });
+    
  };
 
  $('#form-contact').validate({

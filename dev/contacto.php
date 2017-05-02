@@ -1,10 +1,16 @@
 <?php
-$nombre=$_POST['nombre'];
+$nombre=$_GET['nombre'];
 $nombre=ucfirst($nombre);
-$email=$_POST['email'];
-$telefono=$_POST['tel'];
-$asunto=$_POST['asunto'];
-$mensaje=$_POST['mensaje'];
+$email=$_GET['email'];
+$telefono=$_GET['tel'];
+$asunto=$_GET['asunto'];
+$mensaje=$_GET['mensaje'];
+
+echo $nombre;
+echo $email;
+echo $telefono;
+echo $asunto;
+echo $mensaje;
 
 $path='http://creecemas.com';
 $to="davichay@gmail.com";
@@ -291,13 +297,12 @@ $body = '
 </body>
 </html>
 ';
-echo $body;
 
 //para el envío en formato HTML
 $headers = 'Content-Type: text/html; charset=UTF-8';
 $headers.= 'From:creecemas.com <no-reply@creecemas.com>');
 
-
 mail($to,$subject,$body,$headers)
 
 ?>
+se ejecuto
