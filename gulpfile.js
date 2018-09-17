@@ -48,8 +48,8 @@ gulp.task('html', function () {
 
 gulp.task('connect',function(){
     connect.server({
-      root:'./dev/',
-      port: 8000,
+      root:'./dist/',
+      port: 8080,
       livereload:true
     });
 });

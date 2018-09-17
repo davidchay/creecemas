@@ -1,0 +1,14 @@
+[0517/160420.830:ERROR:persistent_memory_allocator.cc(678)] Corruption detected in shared-memory segment.
+[0517/160420.831:ERROR:persistent_memory_allocator.cc(678)] Corruption detected in shared-memory segment.
+[0517/160420.831:ERROR:persistent_memory_allocator.cc(678)] Corruption detected in shared-memory segment.
+[0517/160420.832:ERROR:persistent_memory_allocator.cc(678)] Corruption detected in shared-memory segment.
+[0517/160420.833:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Coldmay\settings.dat: Acceso denegado. (0x5)
+[0517/160420.838:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[0517/160420.840:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Coldmay\settings.dat: Acceso denegado. (0x5)
+[0819/200938.686:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Coldmay\settings.dat: Acceso denegado. (0x5)
+[0819/200938.718:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[0819/200938.718:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Coldmay\settings.dat: Acceso denegado. (0x5)
+[0819/200939.343:ERROR:crashpad_client_win.cc(660)] crash server failed to launch, no dump captured
+[0825/201838.817:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Coldmay\settings.dat: Acceso denegado. (0x5)
+[0825/201838.918:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[0825/201838.920:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Coldmay\settings.dat: Acceso denegado. (0x5)
