@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+.header-wrapper {
+    .header-contact{
+        background-color: $brand-primary;
+        color:$white;
+        .row {
+            padding:.5rem 0;
+            a{
+                color:$white;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+            .iconos-contact a{
+                padding-left:1rem;
+            }
+        }
+        @media (min-width: 768px) {
+            font-size: 1.2rem;
+            .row{
+                height:60px;
+            }
+        }
+
+    }
+}

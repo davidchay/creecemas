@@ -9,9 +9,12 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     gutil = require('gulp-util');
 
-var path={
+var path = {
     src:{
-        scss:'./dev/scss/**/*.scss',
+        scss: {
+            style: './dev/scss/style/**/*.scss',
+            custom: './dev/scss/creecemas/**/*.scss'
+        },
         html:'./dev/*.html',
         styles:'./dev/css/*.css',
         js:'./dev/js/*.js',
@@ -25,30 +28,43 @@ var path={
     }
 };
 
-gulp.task('style',function(){
-    gulp.src(path.src.scss)
-    .pipe(sass({
-         outputStyle:'expanded',
-         errLogToConsole: true
-    }))
-    .pipe(autoprefixer({
-        version:['last 2']
-    }))
-    .pipe(rename({
-        basename: "style",
-        extname: ".css"}))
-    .pipe(gulp.dest(path.dest.css))
-   .pipe(connect.reload());
+gulp.task('style', async function(){
+	gulp.src(path.src.scss.style)
+	.pipe(sass({
+		 outputStyle:'expanded',
+		 errLogToConsole: true
+	}))
+	.pipe(autoprefixer({
+		version:['last 2']
+	}))
+	.pipe(concat('style.css'))
+	.pipe(gulp.dest(path.dest.css))
+	.pipe(connect.reload());
+
 });
 
-gulp.task('html', function () {
+gulp.task('custom', async function(){
+	gulp.src(path.src.scss.custom)
+	.pipe(sass({
+		 outputStyle:'expanded',
+		 errLogToConsole: true
+	}))
+	.pipe(autoprefixer({
+		version:['last 2']
+	}))
+	.pipe(concat('creecemas.css'))
+	.pipe(gulp.dest(path.dest.css))
+	.pipe(connect.reload());
+});
+
+gulp.task('html', async function () {
   gulp.src(path.src.html)
     .pipe(connect.reload());
 });
 
-gulp.task('connect',function(){
+gulp.task('connect', async function(){
     connect.server({
-      root:'./dist/',
+      root:'./dev/',
       port: 8080,
       livereload:true
     });
@@ -68,9 +84,10 @@ gulp.task('dist',function(){
         .pipe(gulp.dest(path.dest.img));
 });
 
-gulp.task('watch',function(){
-  gulp.watch(path.src.scss,['style']);
-  gulp.watch(path.src.html,['html']);
+gulp.task('watch', async function() {
+  gulp.watch(path.src.scss.style, gulp.series('style'));
+  gulp.watch(path.src.scss.custom, gulp.series('custom'));
+  gulp.watch(path.src.html, gulp.series('html'));
 });
 
-gulp.task('default',['style','html','connect','watch']);
+gulp.task('default', gulp.series('style','custom','html','connect','watch'));
