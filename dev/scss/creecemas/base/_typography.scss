@@ -3,5 +3,21 @@
  */
 body {
   color: $text-color;
-  font: normal 125% / 1.4 $text-font-stack;
+  font: normal 125% / 1.4 $font-text;
+
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font: normal 150% / 1.5 $font-title;
+}
+
+.header {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.4;
+  text-transform: uppercase;
+  @media (max-width: 575.98px ) { 
+        font-size: 2.5rem;
+  }
+}
+

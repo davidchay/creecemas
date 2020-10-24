@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
     gutil = require('gulp-util');
+    jsonminify = require('gulp-jsonminify');
 
 var path = {
     src:{
@@ -18,10 +19,11 @@ var path = {
         html:'./dev/*.html',
         styles:'./dev/css/*.css',
         js:'./dev/js/*.js',
-        img:'./dev/img/*'
+        img:'./dev/img/*.*',
+        fonts: './dev/fonts/*.*'
     },
     dest:{
-        css:'./dev/css/',
+        css:'./dist/css/',
         img:'./dist/img/',
         styles:'./dist/css/',
         js:'./dist/js/'
@@ -70,18 +72,71 @@ gulp.task('connect', async function(){
     });
 });
 
-gulp.task('dist',function(){
+gulp.task('server-dist', async function(){
+	connect.server({
+		root:'./dist/',
+		port:8000,
+		livereload:true
+	});
+});
+
+gulp.task('dist', async function(){
+        console.log('Iniciando...');
+        console.log('inicio estilos css');
         gulp.src(path.src.styles)
         .pipe(cssmin())
         .pipe(gulp.dest(path.dest.styles));
+        console.log('termino estilos css');
 
+        console.log('inicio script js');
         gulp.src(path.src.js)
         .pipe(uglify())
         .pipe(gulp.dest(path.dest.js));
+        console.log('termino script js');
 
-        gulp.src(path.src.img)
+        console.log('inicio img  png, jpg');
+        gulp.src(['./dev/img/*.png', './dev/img/*.jpg'])
         .pipe(imagemin())
         .pipe(gulp.dest(path.dest.img));
+        console.log('termino img png, jpg');
+        
+        console.log('inicio img  html');
+        gulp.src('./dev/img/*.html')
+        .pipe(gulp.dest(path.dest.img));
+        console.log('termino img  html');
+
+        console.log('inicio fonts ');
+        gulp.src('./dev/fonts/**/*.*')
+        .pipe(gulp.dest('./dist/fonts/'));
+        console.log('termino fonts');
+        
+        console.log('inicio  data json');
+        gulp.src('./dev/data/*.json')
+        .pipe(jsonminify())
+        .pipe(gulp.dest('./dist/data/'));
+        console.log('termino data json');
+
+        console.log('inicio templates hbs');
+        gulp.src('./dev/templates/*.hbs')
+        .pipe(gulp.dest('./dist/templates/'));
+        console.log('termino templates hbs');
+        
+        console.log('inicio html, php, xml, robot.txt .htaccess');
+        gulp.src(['./dev/*.html', './dev/*.xml', './dev/*.txt', './dev/.htaccess', './dev/*.php'])
+        .pipe(gulp.dest('./dist/'));
+        console.log('termino html, php, xml, robot.txt .htaccess');
+        
+        console.log('inicio images favicon, png, jpg');
+        gulp.src(['./dev/*.png', './dev/*.jpg', './dev/*.ico'])
+        .pipe(gulp.dest('./dist/'));
+        console.log('termino images favicon, png, jpg');
+        
+        console.log('inicio download');
+        gulp.src('./dev/download/*.*')
+        .pipe(gulp.dest('./dist/download/'));
+        console.log('termino download');
+
+        console.log('...completado');
 });
 
 gulp.task('watch', async function() {

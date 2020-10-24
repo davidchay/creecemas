@@ -1,3 +1,59 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+.btn-primary {
+    background: $brand-color;
+    border-color: $brand-color;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: lighten($brand-color , 15%);
+    }
+}
+.btn-outline-primary {
+    color: $brand-color;
+    border-color: $brand-color;
+    &:hover,
+    &:active,
+    &:focus {
+        background: $brand-color;
+    }
+}
+
+.btn-secondary {
+    background: $brand-secondary;
+    border:1px solid $brand-secondary-light;
+    &:hover {
+        background-color: $brand-secondary-light;
+    }
+}
+
+.btn-white {
+    background: $white;
+    color: $brand-color;
+    &:hover {
+        background: $white;
+        color: $brand-color;
+    }
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: $white;
+    &:hover {
+        background: lighten( #25D366, 10%);
+        color: $white;
+    }
+}
+
+
+.btn-facebook {
+    background: #3b5998;
+    color: $white;
+    &:hover {
+        background: lighten( #3b5998, 10%);
+        color: $white;
+    }
+}
+

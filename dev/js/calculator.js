@@ -7,7 +7,7 @@
     $scope.pagoTotal=58800;
     $scope.cat=48;
     $scope.cantidadOptions = {
-        min: 5000,
+        min: 10000,
         max: 100000,
         step: 1000,
         orientation: 'horizontal',  // vertical

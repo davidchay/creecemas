@@ -1,26 +1,10 @@
 (function( $ ) {
     "use strict"; // Start of use strict
-   /* $('#main-slider.carousel').carousel({
+    $('#main-slider.carousel').carousel({
         interval: 8000
-    });*/
-
-    $('a.page-scroll').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html, body').animate({
-              scrollTop: target.offset().top
-            }, 1000);
-            return false;
-          }
-        }
     });
 
-    $('[data-spy="scroll"]').each(function () {
-        var $spy = $(this).scrollspy('refresh');
-    });
-
+    
     //Text rotate
     if($('.text-rotate').length){
       $(".text-rotate").Morphext({
@@ -30,10 +14,26 @@
       });
     }
    
+    $('[data-spy="scroll"]').each(function () {
+      var $spy = $(this).scrollspy('refresh');
+  });
 
-
+   
 })(jQuery);
 
+
+$( document ).on('click','.page-scroll',function(){
+  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1000);
+      return false;
+    }
+  }
+});
 
 var onSubmit = function(token) {
     var datos=$("#form-contact").serializeArray();
@@ -65,25 +65,28 @@ var onSubmit = function(token) {
 
  };
 
- $('#form-contact').validate({
-   messages: {
-     nombre: {
-       required: "Ingrese su nombre por favor",
-     },
-     email:{
-       email: "Ingrese email valido"
-     },
-     tel:{
-       required:"Ingrese su numero de telefono donde lo podamos contactar"
-     },
-     asunto:{
-       required:"Por favor ingrese el motivo por el cual nos contacta"
-     },
-     mensaje:{
-       required:"Por favor escriba sus dudas o comentarios, será un placer ayudarle"
-     }
-   },
-   submitHandler: function() {
-     grecaptcha.execute();
-   }
- });
+ if($('#form-contact').length)
+ {
+  $('#form-contact').validate({
+    messages: {
+      nombre: {
+        required: "Ingrese su nombre por favor",
+      },
+      email:{
+        email: "Ingrese email valido"
+      },
+      tel:{
+        required:"Ingrese su numero de telefono donde lo podamos contactar"
+      },
+      asunto:{
+        required:"Por favor ingrese el motivo por el cual nos contacta"
+      },
+      mensaje:{
+        required:"Por favor escriba sus dudas o comentarios, será un placer ayudarle"
+      }
+    },
+    submitHandler: function() {
+      grecaptcha.execute();
+    }
+  });
+ }

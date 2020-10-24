@@ -2,3 +2,15 @@
 // When having several themes, this file contains everything related to the
 // default one.
 // -----------------------------------------------------------------------------
+a.link {
+    color: $brand-color;
+    transition: all .3s ease-in-out;
+    padding-left: 3px;
+    padding-right: 3px;
+
+    &:hover,&:active, &:focus {
+        background-color: $brand-color;
+        color: $white;
+        text-decoration: none;
+    }
+}

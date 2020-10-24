@@ -1,0 +1,41 @@
+
+{
+    "empresa" : "Cree Ce Más",
+    "eslogan": "Fácil y rápido, préstamos a tu medida.",
+    "direccion" : "21 Privada Oriente No. 9 Esquina con 1ra. Norte.",
+    "urlMinegocio" : "https://g.page/CreeCeMas?gm",
+    "colonia" : "Colonia Centro",
+    "codigoPostal" : "CP. 30700.",
+    "ciudad" : "Tapachula, chiapas." ,
+    "telefono" : "(962) 118 05 60",
+    "celular" : "962 695 61 31",
+    "email" : "operativocmas@hotmail.com",
+    "whatsapp" : "+52 962 695 61 31",
+    "urlWhatsapp" :"https://wa.me/529626956131",
+    "facebook" : "cree Ce Más",
+    "urlfacebook": "https://www.facebook.com/creecemastap/",
+    "rutasHome" : [
+        {
+        "title" : "Inicio",
+        "route" : "/"
+        },
+        {
+        "title" : "¿Quiénes somos?",
+        "route" : "#section-acercade"
+        },
+        {
+        "title" : "Crédito",
+        "route" : "#section-creditos"
+        },
+        {
+        "title" : "Ubicación",
+        "route" : "#section-ubication"
+        },
+        {
+        "title" : "Contacto",
+        "route" : "#section-contacto"
+        }
+    ]
+    
+}
+  

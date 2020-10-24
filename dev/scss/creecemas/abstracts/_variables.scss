@@ -2,6 +2,8 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
+$font-text: 'Open Sans', 'sans-serif' !default;
+$font-title: 'Overpass', 'sans-serif' !default;
 
 /// Regular font family
 /// @type List
@@ -39,7 +41,8 @@ $dark-grey: rgb(68, 68, 68) !default;
 
 
 $brand-primary: $brand-color;
-$brand-secondary: #bf0000;
+$brand-secondary: #121366;
+$brand-secondary-light: #1d1ea3;
 $black: #000000;
 $white: #ffffff;
 

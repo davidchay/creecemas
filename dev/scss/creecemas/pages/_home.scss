@@ -1,3 +1,99 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
+
+.section {
+    padding: 4rem 0;
+
+}
+.header {
+    margin-top: 25px;
+}
+
+#section-testimonials {
+    #carouselTestimonials {
+        .carousel-indicators > li{
+            border-radius: 50%;
+            width: 15px;
+            height:15px;
+            background-color: $brand-color;
+        }
+        .carousel-control-prev .fas,
+        .carousel-control-next .fas{
+            opacity: .2;
+            &:hover {
+                opacity: .9;
+            }
+        }
+        .carousel-item {
+            h4 {
+                color: $black;
+                font-weight: bold;
+            }
+            p {
+                font-size: 1rem;
+                font-style: italic;
+            }
+
+            img {
+                
+                border:7px solid$brand-color;
+            }
+
+           
+        }
+    }
+}
+
+//Preguntas frecuentes
+#section-faq {
+    h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        span {
+            color: $brand-primary;
+        }
+    }
+    p, ul li {
+        font-size: 1rem;
+    }
+    
+}
+
+
+
+//Contacto
+
+#section-contacto{
+    background-size: cover;
+    background-position: middle;
+    color:$white;
+    .overlay {
+      padding: 5rem 0;
+      background: rgba($brand-primary,0.6);
+      ol{
+        padding:0;
+        margin: 0;
+        list-style: none;
+        li {
+            margin: 5px 0;
+        }
+      }
+      a{
+        color:$white;
+        text-decoration: none;
+        margin-top: 1rem;
+        font-size: 1.111rem;
+       
+        .fa, .far, .fas, .fab {
+            margin-right: 10px;
+        }
+      }
+    }
+    .btn-light {
+        color: $brand-color;
+    }
+    &.section {
+        padding:0;
+    }
+  }

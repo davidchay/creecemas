@@ -1,0 +1,19 @@
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes grow {
+	from {	
+		-webkit-transform: scale(.0010); 
+		transform: scale(.0010);
+	}
+	to {	
+		-webkit-transform: scale(3.3); 
+		transform: scale(3.3);
+	}
+}

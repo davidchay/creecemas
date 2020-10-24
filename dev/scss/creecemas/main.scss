@@ -6,7 +6,9 @@
 @import 'abstracts/functions';
 
 @import 'abstracts/mixins';
+@import 'abstracts/keyframes';
 
+@import 'abstracts/loading';
 // 2. Vendors
 @import 'vendors/normalize';
 
@@ -24,9 +26,15 @@
 // 5. Components
 @import 'components/button';
 @import 'components/slider';
+@import 'components/timeline';
+@import 'components/hero';
+@import 'components/cta-footer';
 
 // 6. Page-specific styles
 @import 'pages/home';
+@import 'pages/preguntas-frecuentes';
+@import 'pages/about';
+@import 'pages/contact';
 
 // 7. Themes
 @import 'themes/default';

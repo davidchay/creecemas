@@ -53,3 +53,15 @@
   position: absolute;
   width: 1px;
 }
+
+.text-primary {
+  color: $brand-color !important;
+}
+
+.bg-light {
+  background: $light-grey;
+}
+
+.bg-primary {
+  background: $brand-primary !important;
+}

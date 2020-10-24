@@ -4,249 +4,123 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="David Chay @davichay">
-    <title>Contactanos | Cree Ce Más S.A. de C.V.</title>
+    <meta name="description" content="Queremos conocerte. visitanos en la 21 Privada Oriente No. 9 Esquina con 1ra. Norte. Colonia Centro, Tapachula, chiapas. Tel. 962 (962) 118 05 60, Cel. 962 695 61 31, email. operativocmas@hotmail.com, WhatsApp +52 962 695 61 31">
+    <meta name="robot" content="index, follow">
+    <meta name="author" content="codipix.com - Diseño web y Marketing digital">
+    <title>Ponte en contacto con nosotros, será un placer atender todas tus dudas | Cree Ce Más Tapachula</title>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Bootstrap Core CSS -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/font-awesome.css" rel="stylesheet">
+   <link href="css/style.css" rel="stylesheet">
+   <link href="css/creecemas.css" rel="stylesheet">
 
-    <!-- Temporary fix for navbar responsiveness -->
-    <style>
-    .navbar-toggler {
-        z-index: 1;
-    }
+   <script>
+    window.addEventListener("load", function(event) {
+      $('#loading').fadeOut('slow');
+    });
+  </script>  
 
-    @media (max-width: 576px) {
-        nav > .container {
-            width: 100%;
-        }
-    }
-    </style>
 </head>
 
-<body class="page">
-<header class="header-wrapper" style="background-image:url(img/contacto-bg.jpg);">
-  <div class="overlay">
-    <div class="header-contact ">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-sm-6 text-center text-sm-left">
-                    <a href="tel:9621180506">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                        ¡Llamanos! (962) 118 05 60
-                    </a>
-                </div>
-                <div class="col-12 hidden-xs-down col-sm-6 iconos-contact text-right">
-                    <a href="https://www.facebook.com/creece.mas" target="_blank" title="Siguenos en Facebook">
-                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                    </a>
-                    <a href="mailto:operativocmas@hotmail.com" trarget="_blank" title="Escribenos un email">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                    </a>
-                    <!--
-                    <a href="#" target="_blank" title="Subscribete a nuestro canal">
-                        <i class="fa fa-youtube" aria-hidden="true"></i>
-                    </a>
-                  -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse  navbar-toggleable-md ">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="img/logo.png" alt="Cree Ce Más" >
-            </a>
-            <div class="collapse navbar-collapse" id="navbarExample">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./">Inicio<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./quienes-somos.html">¿Quiénes somos?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./obten-tu-credito.html">Crédito</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./calcula-tu-credito.html">Calculadora</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="./contacto.html">Contacto</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 site-heading align-self-center">
-          <div class="site-heading">
-            <h1 class="display-3">Contáctanos</h1>
-            <p class="lead">De la forma en que prefieras, nosotros te contestamos.<br/>Será un placer atender todas tus dudas.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+<body class="contact">
 
+  <div id="loading">
+    <img id="loading-image" src="./img/logo-ico.png" alt="Loading..." />
   </div>
-</header>
-<section id="form-contacto" class="py-5">
+
+
+  <header class="header-wrapper" >
+    <div id="header-contact"></div>
+    <!-- Navigation -->
+    <div id="navigation"></div>
+    <div class="hero" style="background-image:url(img/bg_contact.jpg);">
+      <div class="overlay">
+            <div class=" site-heading">
+              
+              <h1 class="">Contáctanos</h1>
+              <p class="">De la forma en que prefieras, nosotros te contestamos.<br/>Será un placer atender todas tus dudas.</p>
+                
+            </div>
+        
+      </div>
+    </div> 
+  </header>
+
+<section id="form-contacto-page" class="py-5">
   <div class="container my-5">
       <div class="row">
-        <div class="col-12 mb-5 text-center">
-          <h2 class="display-4">Escríbenos</h2>
-        </div>
-        <div class="col-12 hidden-sm-down">
+        <div class="col-12 col-md-8 mb-5">
+          <h3 class="">Ponte en contacto</h2>
+           
           <div class="response"></div>
-        </div>
-      </div>
-     <form id="form-contact" action="" class="form">
-        <div class="row mb-3">
-          <div class="col-12 col-md-8 offset-md-2">
-            <input type="text" class="form-control form-control-lg" id="nombre" name="nombre" aria-describedby="nombre" placeholder="Nombre" required>
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-12 col-md-4 offset-md-2">
-            <input type="email" class="form-control form-control-lg" id="email" name="email" aria-describedby="email" placeholder="Email">
-          </div>
-          <div class="col-12 col-md-4">
-            <input type="tel" class="form-control form-control-lg" id="tel" name="tel" placeholder="Teléfono" required>
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-12 col-md-8 offset-md-2">
-            <input type="text" class="form-control form-control-lg" id="asunto" name="asunto" placeholder="Asunto" required>
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-12 col-md-8 offset-md-2">
-            <textarea class="form-control form-control-lg" id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
-          </div>
-        </div>
-        <div id="recaptcha" class="g-recaptcha"
-          data-sitekey="6LdUDh8UAAAAAA5tdio78LB72bh6_Q6zL35bLX28"
-          data-callback="onSubmit"
-          data-size="invisible"></div>
-        <div class="row">
-          <div class="col-12 col-md-4 offset-md-4">
-            
-            <button type="submit" class="btn btn-lg btn-block btn-primary" >
-              <i class="fa fa-paper-plane" aria-hidden="true"></i> Contactar
-            </button>
-          </div>
-        </div>
-      </form>
-      <div class="row">
-        <div class="col-12 hidden-md-up ">
-          <div class="response"></div>
-        </div>
-      </div>
-  </div>
-</section>
-<section id="llamanos"class="section-image my-5" style="background-image:url(./img/llamanos.jpg)">
-  <div class="overlay py-5">
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-12 mb-5 text-center">
-          <h2 class="display-4">Llámanos</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 text-center text-md-left col-md-4 offset-md-2">
-          <span class="lead"><i class="fa fa-phone fa-lg"></i> Tel. (962) 118 05 60</span>
-        </div>
-        <div class="col-12 text-center text-md-right col-md-4">
-          <span class="lead"><i class="fa fa-mobile fa-lg"></i> Cel. 962 695 61 31</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 text-center mt-5">
-          <p class="">Siempre tenemos tiempo para atender a alguien tan importante como tú</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="ubicacion" class="pt-5">
-  <div class="container mt-5">
-    <div class="row mb-5">
-      <div class="col-12 text-center">
-        <h2 class="display-4">Visítanos</h2>
-        <p class="lead"><i class="fa fa-map-marker" aria-hidden="true"></i> 23 calle oriente no. 91, colonia Centro.
-Tapachula, Chiapas.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="mapa" style="position:relative;">
-    <div class="mapa-contacto"></div>
-    <div id="map" class="map"></div>
-  </div>
-
-</section>
-      <!-- Footer -->
-    <footer id="section-footer" class="pt-5 bg-faded">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-4 py-3">
-              <img src="img/logo-footer.png" class="d-block img-fluid" alt="">
+           
+          <form id="form-contact" action="" class="form">
+            <div class="form-group">
+              <label for="nombre">Nombre <span class="text-danger">*</span></label>
+              <input type="text" class="form-control form-control-lg" id="nombre" name="nombre" aria-describedby="nombre" placeholder="" required>
             </div>
-            <div class="col-12 push-md-5 col-md-3 py-3">
-              <h4 class="text-center text-md-left">Menu</h4>
-              <ul>
-                <li><a href="./">Inicio</a></li>
-                <li><a href="./calcula-tu-credito.html">Calculadora</a></li>
-                <li><a href="./obten-tu-credito.html">Tramite de crédito</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="./aviso-de-privacidad.html">Aviso de privacidad</a></li>
-                <li><a href="./preguntas-frecuentes.html">Preguntas frecuentes</a></li>
-              </ul>
-            </div><!-- -->
-            <div class="col-12 pull-md-3 col-md-4 offset-md-1 py-3 text-center text-md-left">
-              <h4 class="h6 text-uppercase">Cree Ce Más S.A. de C.V.</h4>
-              <ul>
-                <li>23 calle oriente no. 91, colonia Centro.</li>
-                <li>Tapachula, Chiapas.</li>
-                <li>Tel. (962) 118 05 60</li>
-                <li>Cel. 962 695 61 31</li>
-                <li>operativocmas@hotmail.com</li>
-              </ul>
+            <div class="form-row form-group">
+              <div class="col-12 col-md-6 mb-3 mb-md-0">
+                <label for="email">Email </label>
+                <input type="email" class="form-control form-control-lg" id="email" name="email" aria-describedby="email" placeholder="">
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="tel">Teléfono <span class="text-danger">*</span></label> 
+                <input type="tel" class="form-control form-control-lg" id="tel" name="tel" placeholder="" required>
+              </div>
+
             </div>
-          </div>
-        </div>
-        <div class="container text-center pb-4 pt-5">
-            <small class="m-0 text-muted">Copyright &copy; 2017. Cree Ce Más S.A. de C.V.</small>
-        </div>
-        <!-- /.container -->
-    </footer>
+            <div class="form-group">
+              <label for="asunto">Asunto <span class="text-danger">*</span></label>
+              <input type="text" class="form-control form-control-lg" id="asunto" name="asunto" placeholder="" required>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje <span class="text-danger">*</span></label>
+              <textarea class="form-control form-control-lg" id="mensaje" name="mensaje" placeholder="" required></textarea>
+            </div>
 
+            <div id="recaptcha" class="g-recaptcha"
+               data-sitekey="6LdUDh8UAAAAAA5tdio78LB72bh6_Q6zL35bLX28"
+               data-callback="onSubmit"
+               data-size="invisible">
+            </div>
+            <div class="form-group">
+              <div class="response"></div>
+              <button type="submit" class="btn btn-lg btn-outline-primary rounded-0" >
+                Enviar mensaje
+              </button>
+            </div>
+             
+             
+          </form>
+        </div> <!--/col-8-->
+        <div class="col-12 col-md-4 mb-5">
+          <div class="card rounded-0 shadow-lg border-0 bg-primary">
+            <div class="card-body ">
+              <div id="contacto-info"></div>
+            </div>
+          </div>  
+        </div><!--/col-4-->
+      </div><!--/row-->
 
+  </div>
+</section>
 
-    <!-- jQuery Version 3.2.0 -->
-    <script src="js/jquery.min.js"></script>
+<section id="ubicacion" class="">
+</section>
+   
+  <!-- Footer -->
+  <footer id="section-footer" class="pt-5">
+  </footer>
+  
 
-    <!-- Tether -->
-    <script src="js/tether.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsvPx6JrySQxAm9Q94aWXmAMXugaRXyMY" type="text/javascript"></script>
-    <script src="js/gmaps.js"></script>
-
-    <script src="js/jquery.validate.js"></script>
-    <script src="js/crecemas.js"></script>
-    
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+  <script src="js/handlebars.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/loadTemplates.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/jquery.validate.js"></script>
+  <script src="js/crecemas.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
 </body>

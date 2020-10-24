@@ -1,0 +1,50 @@
+form {
+    input[type=text],
+    input[type=email],
+    input[type=tel],
+    textarea {
+        border:1px solid rgba($mid-grey, 0.2) !important;
+        border-radius: 0 !important;
+        
+        &:focus,
+        &:active {
+            border:1px solid rgba($mid-grey, 1) !important;
+        }
+    }
+    input[type=submit]{
+        border-radius: 0 !important;
+    }
+    .form-control {
+        &:focus {
+            border: none;
+            box-shadow: none;
+        }
+    }
+}
+
+#contacto-info {
+    color: $white;
+    
+    ul,
+    ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            margin-bottom: .7rem;
+
+            a {
+                color: rgba($white, 0.8);
+                &:hover,
+                &:active,
+                &:focus {
+                    color: rgba($white, 1);
+                }
+
+                .fas,.far, .fab {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}

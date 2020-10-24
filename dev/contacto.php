@@ -6,9 +6,10 @@ $telefono=$_GET['tel'];
 $asunto=$_GET['asunto'];
 $mensaje=$_GET['mensaje'];
 
-$path='http://creecemas.com';
+$path='https://creecemastapachula.com';
 $to="operativocmas@hotmail.com";
-$subject= $nombre." a contatactado desde el sitio web creecemas.com";
+//$to="davichay@gmail.com";
+$subject= $nombre." a contatactado desde el sitio web creecemastapachula.com";
 $body='<!DOCTYPE html>
 <html lang="es">
 <head>

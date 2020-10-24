@@ -1,0 +1,16 @@
+.cta-footer {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .overlay {
+        background-color: rgba($brand-primary,0.6);
+        color:$white;
+        
+        a {
+            color: $white;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    } //overlay
+}

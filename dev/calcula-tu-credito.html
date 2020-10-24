@@ -4,102 +4,47 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="David Chay @davichay">
-    <title>Calcula tu crédito | Cree Ce Más S.A. de C.V.</title>
+    <meta name="description" content="Entra y comprueba, selecciona la cantidad que necesitas, elige el plazo que quieras y comprueba por ti mismo. Manejamos la tasa de interés más baja. Tramita tu préstamo hoy mismo.">
+    <meta name="robot" content="index, follow">
+    <meta name="author" content="codipix.com - Diseño web y Marketing digital">
+    <title>Calcula tu préstamo, la cantidad que necesites al plazo que elijas con la tasa de interés más baja | Cree Ce Más Tapachula </title>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap-slider.css">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/font-awesome.css" rel="stylesheet">
-
-    <!-- Temporary fix for navbar responsiveness -->
-    <style>
-    .navbar-toggler {
-        z-index: 1;
-    }
-
-    @media (max-width: 576px) {
-        nav > .container {
-            width: 100%;
-        }
-    }
-    </style>
-
+     <!-- Bootstrap Core CSS -->
+   <link href="css/style.css" rel="stylesheet">
+   <link href="css/creecemas.css" rel="stylesheet">
+   <link rel="stylesheet" href="css/bootstrap-slider.css">
+   <link rel="stylesheet" href="css/hover.css">
+   
+   <script>
+    window.addEventListener("load", function(event) {
+      $('#loading').fadeOut('slow');
+    });
+  </script>  
+   
 </head>
 
 <body class="page" ng-app="app">
-<header class="header-wrapper mb-5" style="background-image:url(img/calcula-tu-credito-bg.jpg);">
-  <div class="overlay">
-    <div class="header-contact ">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-sm-6 text-center text-sm-left">
-                    <a href="tel:9621180506">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                        ¡Llamanos! (962) 118 05 60
-                    </a>
-                </div>
-                <div class="col-12 hidden-xs-down col-sm-6 iconos-contact text-right">
-                    <a href="https://www.facebook.com/creece.mas" target="_blank" title="Siguenos en Facebook">
-                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                    </a>
-                    <a href="mailto:operativocmas@hotmail.com" trarget="_blank" title="Escribenos un email">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                    </a>
-                    <!--
-                    <a href="#" target="_blank" title="Subscribete a nuestro canal">
-                        <i class="fa fa-youtube" aria-hidden="true"></i>
-                    </a>
-                  -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse  navbar-toggleable-md ">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="img/logo.png" alt="Cree Ce Más" >
-            </a>
-            <div class="collapse navbar-collapse" id="navbarExample">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./">Inicio<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./quienes-somos.html">¿Quiénes somos?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./obten-tu-credito.html">Crédito</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="./calcula-tu-credito.html">Calculadora</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./contacto.html">Contacto</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 site-heading align-self-center">
-          <div class="site-heading">
-            <h1 class="display-3">Calcula tu crédito</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-
+  <div id="loading">
+    <img id="loading-image" src="./img/logo-ico.png" alt="Loading..." />
   </div>
-</header>
+
+  <header class="header-wrapper" >
+    <div id="header-contact"></div>
+    <!-- Navigation -->
+    <div id="navigation"></div>
+    <div class="hero" style="background-image:url(img/calcula-tu-credito-bg.jpg);">
+      <div class="overlay">
+            <div class=" site-heading">
+              
+              <h1 class="">Calcula tu préstamo</h1>
+              
+            </div>
+        
+      </div>
+    </div> 
+  </header>
 <main ng-controller="calculadoraCtrl">
-  <div class="container">
+  <div class="container py-5 my-5">
     <div class="row align-items-center">
       <div class="col-12 col-md-6 text-center">
             <h3 class="h2">¿Cuanto necesitas?</h3>
@@ -124,152 +69,84 @@
                 </div>
             </p>
       </div>
-      <div class="col-12 col-md-4 offset-md-1 text-center">
-        <div class="card bg-faded">
-          <div class="card-block">
+      <div class="col-12 col-md-4 offset-md-1 text-center ">
+        <div class="card bg-primary text-white border-0 shadow rounded-lg">
+          <div class="card-body">
             <h4 class="card-title py-2 ">Pago <span>{{periodoPago | lowercase}}</span> de:</h4>
-            <span class="card-text display-5">{{ pago | currency}}</span>
-            <p class="card-text pt-3">Total a pagar</p>
-            <span class="card-text display-6">{{pagoTotal|currency}}</span>
+            <span class="card-text display-4">{{ pago | currency}}</span>
+            <h4 class="card-title pt-3">Total a pagar</h4>
+            <span class="card-text display-4">{{pagoTotal|currency}}</span>
             <p class="card-text mt-3"><small>CAT {{cat}}% (Más IVA)</small></p>
 
-            <a href="./obten-tu-credito.html" class="btn btn-primary mt-3">Tramita tu crédito</a>
+            <a href="./obten-tu-credito.html" class="btn btn-white rounded-pill hvr-pulse btn-lg mt-3">Tramita tu préstamo</a>
           </div>
         </div>
       </div>
     </div>
+  </div><!--/container-->
+  <div class="container">
     <div class="row my-5">
-      <table class="table table-striped text-center">
-        <thead class="thead-inverse">
-          <tr>
-            <th class="text-center">Cantidad</th>
-            <th class="text-center">Plazo</th>
-            <th class="text-center">Tasa Mensual</th>
-            <th class="text-center">Plazo Máximo</th>
-            <th class="text-center">Tasa Anual Total (CAT)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>$10,000.00 - $20,000.00</td>
-            <td>Semanal / Quincenal</td>
-            <td>5% más IVA</td>
-            <td>52</td>
-            <td>60%</td>
-          </tr>
-          <tr>
-            <td>$21,000.00 - $100,000.00</td>
-            <td>Mensual</td>
-            <td>4% más IVA</td>
-            <td>24</td>
-            <td>48%</td>
-          </tr>
-          <tr>
-            <td>$101,000.00 - $500,000.00</td>
-            <td>Mensual</td>
-            <td>3% más IVA</td>
-            <td>48</td>
-            <td>36%</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table text-center table-hover ">
+          <thead class="thead-inverse">
+            <tr>
+              <th class="text-center">Cantidad</th>
+              <th class="text-center">Plazo</th>
+              <th class="text-center">Tasa Mensual</th>
+              <th class="text-center">Plazo Máximo</th>
+              <th class="text-center">Tasa Anual Total (CAT)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>$10,000.00 - $20,000.00</td>
+              <td>Quincenal</td>
+              <td>5% más IVA</td>
+              <td>52</td>
+              <td>60%</td>
+            </tr>
+            <tr>
+              <td>$21,000.00 - $100,000.00</td>
+              <td>Mensual</td>
+              <td>4% más IVA</td>
+              <td>24</td>
+              <td>48%</td>
+            </tr>
+            <tr>
+              <td>$101,000.00 - $500,000.00</td>
+              <td>Mensual</td>
+              <td>3% más IVA</td>
+              <td>48</td>
+              <td>36%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!--/table-responsive-->
     </div>
 
   </div>
 
 </main>
-<section class="section-image" style="background-image:url(./img/credit-fotter-bg.jpg)">
-  <div class="overlay py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="display-5 mb-5">Para más información.</h2>
-        </div>
-        <div class="col-12 col-md-4 text-center">
-          <span class="fa-stack fa-4x">
-            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-            <i class="fa fa-map-marker fa-stack-1x fa-inverse" aria-hidden="true"></i>
-          </span>
-          <h3 class="h5">Visítanos</h3>
-          <p>23 calle oriente no. 91, colonia Centro.
-Tapachula, Chiapas.</p>
-        </div>
-        <div class="col-12 col-md-4 text-center">
-          <span class="fa-stack fa-4x">
-            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-            <i class="fa fa-phone fa-stack-1x fa-inverse" aria-hidden="true"></i>
-          </span>
-          <h3 class="h5">Llámanos</h3>
-          <p>Tel. (962) 118 05 60.<br/>
-Cel. 962 695 61 31.</p>
-        </div>
-        <div class="col-12 col-md-4 text-center">
-          <span class="fa-stack fa-4x">
-            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-            <i class="fa fa-envelope-o fa-stack-1x fa-inverse" aria-hidden="true"></i>
-          </span>
-          <h3 class="h5">Escríbenos</h3>
-          <p>operativocmas@hotmail.com</p>
-        </div>
-        <div class="col-12 text-center">
-          <h2 class="display-6 mt-5">Será un placer ayudarle.</h2>
-        </div>
-      </div>
-    </div>
-  </div>
+
+<section id="cta-footer" class="cta-footer" style="background-image:url(./img/credit-fotter-bg.jpg)">
 </section>
-      <!-- Footer -->
-    <footer id="section-footer" class="pt-5 bg-faded">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-4 py-3">
-              <img src="img/logo-footer.png" class="d-block img-fluid" alt="">
-            </div>
-            <div class="col-12 push-md-5 col-md-3 py-3">
-              <h4 class="text-center text-md-left">Menu</h4>
-              <ul>
-                <li><a href="./">Inicio</a></li>
-                <li><a href="./calcula-tu-credito.html">Calculadora</a></li>
-                <li><a href="./obten-tu-credito.html">Tramite de crédito</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="./aviso-de-privacidad.html">Aviso de privacidad</a></li>
-                <li><a href="./preguntas-frecuentes.html">Preguntas frecuentes</a></li>
-              </ul>
-            </div><!-- -->
-            <div class="col-12 pull-md-3 col-md-4 offset-md-1 py-3 text-center text-md-left">
-              <h4 class="h6 text-uppercase">Cree Ce Más S.A. de C.V.</h4>
-              <ul>
-                <li>23 calle oriente no. 91, colonia Centro.</li>
-                <li>Tapachula, Chiapas.</li>
-                <li>Tel. (962) 118 05 60</li>
-                <li>Cel. 962 695 61 31</li>
-                <li>operativocmas@hotmail.com</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="container text-center pb-4 pt-5">
-            <small class="m-0 text-muted">Copyright &copy; 2017. Cree Ce Más S.A. de C.V.</small>
-        </div>
-        <!-- /.container -->
-    </footer>
+  <!-- Footer -->
+  <footer id="section-footer" class="pt-5">
+  </footer>
+  
 
-
-
-  <!-- jQuery Version 3.2.0 -->
-    <script src="js/jquery.min.js"></script>
-
-    <!-- Tether -->
-    <script src="js/tether.min.js"></script>
-
-    <script src="js/bootstrap-slider.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    <!--<script src="js/crecemas.js"></script>-->
-    <script src="js/angular.min.js"></script>
-    <script src="js/ng-slider.js"></script>
-    <script src="js/ng-buttons-ui.js"></script>
-    <script src="js/calculator.js"></script>
+  <script src="js/handlebars.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/loadTemplates.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.js"></script>
+  
+  <script src="js/crecemas.js"></script>
+  <script src="js/bootstrap-slider.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/ng-slider.js"></script>
+  <script src="js/ng-buttons-ui.js"></script>
+  <script src="js/calculator.js"></script>
 
 </body>
 

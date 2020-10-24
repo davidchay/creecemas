@@ -1,0 +1,20 @@
+#loading {
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 1;
+	background-color: #fff;
+	z-index: 9999999999;
+  }
+  
+  #loading-image {
+	position: absolute;
+	width: 64px;
+	z-index: 100;
+	animation: grow 6s -2s infinite;
+  }
